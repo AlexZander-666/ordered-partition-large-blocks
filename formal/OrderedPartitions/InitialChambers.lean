@@ -4,7 +4,7 @@ import OrderedPartitions.QuadraticFiniteOrder
 import OrderedPartitions.FirstJumpVerified
 
 /-! Exact adjacent root orders up to and including the first cubic row.
-The three possible degree patterns use the actual enumerators on ordered set partitions. -/
+The four possible degree patterns use the actual enumerators on ordered set partitions. -/
 
 noncomputable section
 namespace OrderedPartitions

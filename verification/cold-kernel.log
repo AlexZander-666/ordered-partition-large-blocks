@@ -18,11 +18,11 @@ info: OrderedPartitions/FirstJump.lean:162:0: 'OrderedPartitions.capacity' depen
 info: OrderedPartitions/FirstJump.lean:163:0: 'OrderedPartitions.first_jump_two_blocks' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/FirstJump.lean:164:0: 'OrderedPartitions.firstJumpEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/FirstJump.lean:165:0: 'OrderedPartitions.first_jump_count' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [3007/3012] Built OrderedPartitions.FirstJumpRows (1.4s)
+ℹ [3007/3012] Built OrderedPartitions.FirstJumpRows (1.6s)
 info: OrderedPartitions/FirstJumpRows.lean:50:0: 'OrderedPartitions.coeff_row' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/FirstJumpRows.lean:51:0: 'OrderedPartitions.row_linear' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/FirstJumpRows.lean:52:0: 'OrderedPartitions.row_first_jump' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [3008/3012] Built OrderedPartitions.LastBlock (1.5s)
+ℹ [3008/3012] Built OrderedPartitions.LastBlock (1.6s)
 info: OrderedPartitions/LastBlock.lean:155:0: 'OrderedPartitions.large_append_card' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/LastBlock.lean:156:0: 'OrderedPartitions.lastBlockEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/LastBlock.lean:157:0: 'OrderedPartitions.blockRow_last' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -31,7 +31,7 @@ info: OrderedPartitions/LastBlockRow.lean:104:0: 'OrderedPartitions.count_recurr
 info: OrderedPartitions/LastBlockRow.lean:105:0: 'OrderedPartitions.coeff_blockRow' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/LastBlockRow.lean:106:0: 'OrderedPartitions.row_eq_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/LastBlockRow.lean:107:0: 'OrderedPartitions.row_recurrence' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [3010/3012] Built OrderedPartitions.MarkedSeries (1.8s)
+ℹ [3010/3012] Built OrderedPartitions.MarkedSeries (1.7s)
 info: OrderedPartitions/MarkedSeries.lean:140:0: 'OrderedPartitions.row_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/MarkedSeries.lean:141:0: 'OrderedPartitions.markedCount_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/MarkedSeries.lean:142:0: 'OrderedPartitions.markedCount_one' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -39,24 +39,24 @@ info: OrderedPartitions/MarkedSeries.lean:143:0: 'OrderedPartitions.markedCount_
 info: OrderedPartitions/MarkedSeries.lean:144:0: 'OrderedPartitions.markedCount_recurrence' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/MarkedSeries.lean:145:0: 'OrderedPartitions.free_resolvent' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/MarkedSeries.lean:146:0: 'OrderedPartitions.marked_segments' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [3011/3119] Built OrderedPartitions.RenewalData (1.6s)
+ℹ [3011/3100] Built OrderedPartitions.RenewalData (1.7s)
 info: OrderedPartitions/RenewalData.lean:85:0: 'OrderedPartitions.RenewalData.bell_real' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [3118/3170] Built OrderedPartitions.RenewalLogInterval (1.0s)
+ℹ [3118/3134] Built OrderedPartitions.RenewalLogInterval (1.0s)
 info: OrderedPartitions/RenewalLogInterval.lean:28:0: 'OrderedPartitions.Renewal.log_two_interval' depends on axioms: [propext, Classical.choice, Quot.sound]
 ℹ [3155/3170] Built OrderedPartitions.RenewalResidual (1.5s)
 info: OrderedPartitions/RenewalResidual.lean:58:0: 'OrderedPartitions.Renewal.residual_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/RenewalResidual.lean:59:0: 'OrderedPartitions.Renewal.residual_coeff' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/RenewalResidual.lean:60:0: 'OrderedPartitions.Renewal.weighted_error' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [3157/3173] Built OrderedPartitions.OriginalEGF (1.6s)
+ℹ [3157/3170] Built OrderedPartitions.OriginalEGF (1.7s)
 info: OrderedPartitions/OriginalEGF.lean:91:0: 'OrderedPartitions.moment_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/OriginalEGF.lean:92:0: 'OrderedPartitions.original_egf' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [3158/3175] Built OrderedPartitions.RenewalOriginal (1.6s)
+ℹ [3158/3170] Built OrderedPartitions.RenewalOriginal (1.6s)
 info: OrderedPartitions/RenewalOriginal.lean:82:0: 'OrderedPartitions.Renewal.errorE_coeff' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/RenewalOriginal.lean:83:0: 'OrderedPartitions.Renewal.source_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/RenewalOriginal.lean:84:0: 'OrderedPartitions.Renewal.seriesT_coeff' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/RenewalOriginal.lean:85:0: 'OrderedPartitions.Renewal.residualP_early' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/RenewalOriginal.lean:86:0: 'OrderedPartitions.Renewal.original_error_of_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [3159/3175] Built OrderedPartitions.RenewalTails (1.6s)
+ℹ [3159/3173] Built OrderedPartitions.RenewalTails (1.7s)
 info: OrderedPartitions/RenewalTails.lean:77:0: 'OrderedPartitions.Renewal.factorB_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/RenewalTails.lean:78:0: 'OrderedPartitions.Renewal.b_hasSum' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/RenewalTails.lean:79:0: 'OrderedPartitions.Renewal.forcingJ_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -68,45 +68,34 @@ info: OrderedPartitions/RenewalMajorants.lean:82:0: 'OrderedPartitions.Renewal.t
 info: OrderedPartitions/RenewalMajorants.lean:83:0: 'OrderedPartitions.Renewal.t_succ' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/RenewalMajorants.lean:84:0: 'OrderedPartitions.Renewal.truncated_product_coeff' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/RenewalMajorants.lean:85:0: 'OrderedPartitions.Renewal.residualP_late' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [3161/3175] Built OrderedPartitions.RenewalConvolution (1.6s)
+ℹ [3161/3175] Built OrderedPartitions.RenewalConvolution (1.7s)
 info: OrderedPartitions/RenewalConvolution.lean:110:0: 'OrderedPartitions.Renewal.ordered_bell_error_of_three_checks' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]
 info: OrderedPartitions/RenewalConvolution.lean:111:0: 'OrderedPartitions.Renewal.convolution_tail_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/RenewalConvolution.lean:112:0: 'OrderedPartitions.Renewal.residual_prefix_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/RenewalConvolution.lean:113:0: 'OrderedPartitions.Renewal.forcing_point_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [3162/3180] Built OrderedPartitions.RenewalTailCutoff (1.6s)
+ℹ [3162/3175] Built OrderedPartitions.RenewalTailCutoff (1.5s)
 info: OrderedPartitions/RenewalTailCutoff.lean:70:0: 'OrderedPartitions.Renewal.tailCost_le_finite' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/RenewalTailCutoff.lean:71:0: 'OrderedPartitions.Renewal.expTail_truncate' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/RenewalTailCutoff.lean:72:0: 'OrderedPartitions.Renewal.expTail_mono' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/RenewalTailCutoff.lean:73:0: 'OrderedPartitions.Renewal.expTail_finite_majorant' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [3163/3182] Built OrderedPartitions.RenewalRationalBridge (1.8s)
+ℹ [3163/3175] Built OrderedPartitions.RenewalRationalBridge (1.9s)
 info: OrderedPartitions/RenewalRationalBridge.lean:98:0: 'OrderedPartitions.Renewal.original_error_from_rational' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/RenewalRationalBridge.lean:99:0: 'OrderedPartitions.Renewal.error_from_interval' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/RenewalRationalBridge.lean:100:0: 'OrderedPartitions.Renewal.tap_from_interval' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/RenewalRationalBridge.lean:101:0: 'OrderedPartitions.Renewal.finiteCost_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [3165/3182] Built OrderedPartitions.RenewalNumeric (4.7s)
+ℹ [3164/3180] Built OrderedPartitions.RenewalNumeric (5.1s)
 info: OrderedPartitions/RenewalNumeric.lean:25:0: 'OrderedPartitions.Renewal.checked_initial' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/RenewalNumeric.lean:26:0: 'OrderedPartitions.Renewal.checked_residual' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/RenewalNumeric.lean:27:0: 'OrderedPartitions.Renewal.checked_forcing' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [3167/3182] Built OrderedPartitions.RenewalVerified (1.4s)
+ℹ [3165/3182] Built OrderedPartitions.RenewalVerified (1.4s)
 info: OrderedPartitions/RenewalVerified.lean:15:0: 'OrderedPartitions.Renewal.ordered_bell_geometric_error' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [3168/3182] Built OrderedPartitions.QuadraticBracketing (1.6s)
-info: OrderedPartitions/QuadraticBracketing.lean:75:0: 'OrderedPartitions.moment_gap_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: OrderedPartitions/QuadraticBracketing.lean:76:0: 'OrderedPartitions.first_jump_brackets_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [3169/3182] Built OrderedPartitions.RenewalKernel (1.7s)
+ℹ [3167/3182] Built OrderedPartitions.RenewalKernel (1.8s)
 info: OrderedPartitions/RenewalKernel.lean:84:0: 'OrderedPartitions.Kernel.eps_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/RenewalKernel.lean:85:0: 'OrderedPartitions.Kernel.g_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/RenewalKernel.lean:86:0: 'OrderedPartitions.Kernel.w_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [3170/3182] Built OrderedPartitions.QuadraticRangeMargin (2.6s)
-info: OrderedPartitions/QuadraticRangeMargin.lean:72:0: 'OrderedPartitions.QuadraticRange.corrected_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: OrderedPartitions/QuadraticRangeMargin.lean:73:0: 'OrderedPartitions.QuadraticRange.decisive_margin' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: OrderedPartitions/QuadraticRangeMargin.lean:74:0: 'OrderedPartitions.QuadraticRange.signed_at_roots' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [3171/3185] Built OrderedPartitions.QuadraticRootOrder (2.2s)
-info: OrderedPartitions/QuadraticRootOrder.lean:239:0: 'OrderedPartitions.QuadraticOrder.adjacent_of_signs' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: OrderedPartitions/QuadraticRootOrder.lean:240:0: 'OrderedPartitions.QuadraticOrder.adjacent_of_remainder' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: OrderedPartitions/QuadraticRootOrder.lean:241:0: 'OrderedPartitions.QuadraticOrder.normalized_adjacent' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [3172/3186] Built OrderedPartitions.RenewalKernelBounds (2.8s)
+ℹ [3169/3182] Built OrderedPartitions.RenewalKernelBounds (2.9s)
 info: OrderedPartitions/RenewalKernelBounds.lean:137:0: 'OrderedPartitions.Kernel.g_increment_error' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/RenewalKernelBounds.lean:138:0: 'OrderedPartitions.Kernel.w_increment_error' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/RenewalKernelBounds.lean:139:0: 'OrderedPartitions.Kernel.g_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -115,61 +104,74 @@ info: OrderedPartitions/RenewalKernelBounds.lean:141:0: 'OrderedPartitions.Kerne
 info: OrderedPartitions/RenewalKernelBounds.lean:142:0: 'OrderedPartitions.Kernel.w_increment' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/RenewalKernelBounds.lean:143:0: 'OrderedPartitions.Kernel.g_error' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/RenewalKernelBounds.lean:144:0: 'OrderedPartitions.Kernel.w_error' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [3173/3186] Built OrderedPartitions.QuadraticExactRows (1.6s)
-info: OrderedPartitions/QuadraticExactRows.lean:120:0: 'OrderedPartitions.QuadraticExact.rows_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: OrderedPartitions/QuadraticExactRows.lean:121:0: 'OrderedPartitions.QuadraticExact.original_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: OrderedPartitions/QuadraticExactRows.lean:122:0: 'OrderedPartitions.QuadraticExact.original_row' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [3174/3187] Built OrderedPartitions.MeanKernel (2.7s)
+ℹ [3170/3182] Built OrderedPartitions.QuadraticBracketing (1.6s)
+info: OrderedPartitions/QuadraticBracketing.lean:75:0: 'OrderedPartitions.moment_gap_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: OrderedPartitions/QuadraticBracketing.lean:76:0: 'OrderedPartitions.first_jump_brackets_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3171/3182] Built OrderedPartitions.MeanKernel (3.1s)
 info: OrderedPartitions/MeanKernel.lean:129:0: 'OrderedPartitions.Kernel.kernel_barrier' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/MeanKernel.lean:130:0: 'OrderedPartitions.Kernel.convolution_barrier' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/MeanKernel.lean:131:0: 'OrderedPartitions.Kernel.original_mean_strict' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [3175/3190] Built OrderedPartitions.QuadraticExactSigns (1.5s)
-info: OrderedPartitions/QuadraticExactSigns.lean:77:0: 'OrderedPartitions.QuadraticExact.checkCutoff_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [3176/3190] Built OrderedPartitions.AllMoments (1.7s)
+ℹ [3172/3185] Built OrderedPartitions.QuadraticRangeMargin (2.9s)
+info: OrderedPartitions/QuadraticRangeMargin.lean:72:0: 'OrderedPartitions.QuadraticRange.corrected_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: OrderedPartitions/QuadraticRangeMargin.lean:73:0: 'OrderedPartitions.QuadraticRange.decisive_margin' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: OrderedPartitions/QuadraticRangeMargin.lean:74:0: 'OrderedPartitions.QuadraticRange.signed_at_roots' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3173/3185] Built OrderedPartitions.QuadraticRootOrder (2.2s)
+info: OrderedPartitions/QuadraticRootOrder.lean:239:0: 'OrderedPartitions.QuadraticOrder.adjacent_of_signs' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: OrderedPartitions/QuadraticRootOrder.lean:240:0: 'OrderedPartitions.QuadraticOrder.adjacent_of_remainder' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: OrderedPartitions/QuadraticRootOrder.lean:241:0: 'OrderedPartitions.QuadraticOrder.normalized_adjacent' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3174/3185] Built OrderedPartitions.AllMoments (1.8s)
 info: OrderedPartitions/AllMoments.lean:110:0: 'OrderedPartitions.Kernel.original_binomial_moment_from_entry' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]
 info: OrderedPartitions/AllMoments.lean:111:0: 'OrderedPartitions.Kernel.original_binomial_moment_strict' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [3177/3190] Built OrderedPartitions.QuadraticMarker (1.8s)
+ℹ [3175/3185] Built OrderedPartitions.QuadraticMarker (1.8s)
 info: OrderedPartitions/QuadraticMarker.lean:102:0: 'OrderedPartitions.Kernel.marker_square_partial' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/QuadraticMarker.lean:103:0: 'OrderedPartitions.Kernel.shifted_marker' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/QuadraticMarker.lean:104:0: 'OrderedPartitions.Kernel.normalizedMoment_coeff' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/QuadraticMarker.lean:105:0: 'OrderedPartitions.Kernel.marker_partial' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [3178/3190] Built OrderedPartitions.AffineRoots (1.7s)
+ℹ [3176/3186] Built OrderedPartitions.AffineRoots (1.6s)
 info: OrderedPartitions/AffineRoots.lean:43:0: 'OrderedPartitions.Kernel.original_affine_roots' depends on axioms: [propext, Classical.choice, Quot.sound]
-✔ [3179/3190] Built OrderedPartitions.QuadraticExactData.Cutoffs26To37 (36s)
-✔ [3180/3190] Built OrderedPartitions.QuadraticExactData.Cutoffs14To25 (13s)
-✔ [3181/3190] Built OrderedPartitions.QuadraticExactData.Cutoffs02To13 (3.3s)
-✔ [3182/3190] Built OrderedPartitions.QuadraticExactData.Cutoffs38To49 (77s)
-ℹ [3183/3190] Built OrderedPartitions.QuadraticConvolution (1.9s)
+ℹ [3177/3186] Built OrderedPartitions.QuadraticExactRows (1.7s)
+info: OrderedPartitions/QuadraticExactRows.lean:120:0: 'OrderedPartitions.QuadraticExact.rows_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: OrderedPartitions/QuadraticExactRows.lean:121:0: 'OrderedPartitions.QuadraticExact.original_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: OrderedPartitions/QuadraticExactRows.lean:122:0: 'OrderedPartitions.QuadraticExact.original_row' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3178/3187] Built OrderedPartitions.QuadraticConvolution (1.0s)
 info: OrderedPartitions/QuadraticConvolution.lean:134:0: 'OrderedPartitions.Kernel.raw_linear_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/QuadraticConvolution.lean:135:0: 'OrderedPartitions.Kernel.raw_quadratic_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/QuadraticConvolution.lean:136:0: 'OrderedPartitions.Kernel.raw_linear_increment' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/QuadraticConvolution.lean:137:0: 'OrderedPartitions.Kernel.raw_quadratic_increment' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [3185/3194] Built OrderedPartitions.QuadraticFinite (1.4s)
-info: OrderedPartitions/QuadraticFinite.lean:67:0: 'OrderedPartitions.QuadraticExact.checked_finite' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: OrderedPartitions/QuadraticFinite.lean:68:0: 'OrderedPartitions.QuadraticExact.original_finite' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [3186/3194] Built OrderedPartitions.QuadraticNormalized (5.2s)
+ℹ [3179/3190] Built OrderedPartitions.QuadraticExactSigns (1.6s)
+info: OrderedPartitions/QuadraticExactSigns.lean:77:0: 'OrderedPartitions.QuadraticExact.checkCutoff_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3180/3190] Built OrderedPartitions.QuadraticNormalized (5.1s)
 info: OrderedPartitions/QuadraticNormalized.lean:118:0: 'OrderedPartitions.Kernel.original_quadratic_estimates' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [3187/3194] Built OrderedPartitions.QuadraticFiniteOrder (1.4s)
-info: OrderedPartitions/QuadraticFiniteOrder.lean:51:0: 'OrderedPartitions.QuadraticExact.original_adjacent_of_signs' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: OrderedPartitions/QuadraticFiniteOrder.lean:52:0: 'OrderedPartitions.QuadraticExact.original_adjacent_finite' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [3188/3194] Built OrderedPartitions.FirstJumpCriterion (1.7s)
-info: OrderedPartitions/FirstJumpCriterion.lean:76:0: 'OrderedPartitions.original_first_jump_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [3189/3194] Built OrderedPartitions.QuadraticActual (1.8s)
+✔ [3181/3190] Built OrderedPartitions.QuadraticExactData.Cutoffs26To37 (38s)
+✔ [3182/3190] Built OrderedPartitions.QuadraticExactData.Cutoffs14To25 (14s)
+✔ [3183/3190] Built OrderedPartitions.QuadraticExactData.Cutoffs02To13 (3.5s)
+✔ [3184/3190] Built OrderedPartitions.QuadraticExactData.Cutoffs38To49 (82s)
+ℹ [3185/3190] Built OrderedPartitions.QuadraticActual (2.0s)
 info: OrderedPartitions/QuadraticActual.lean:74:0: 'OrderedPartitions.Kernel.original_cubic_boundary' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/QuadraticActual.lean:75:0: 'OrderedPartitions.Kernel.original_eval_normalized' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [3190/3194] Built OrderedPartitions.FirstJumpKernel (2.4s)
-info: OrderedPartitions/FirstJumpKernel.lean:144:0: 'OrderedPartitions.Kernel.original_first_jump' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: OrderedPartitions/FirstJumpKernel.lean:145:0: 'OrderedPartitions.Kernel.first_jump_moment' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: OrderedPartitions/FirstJumpKernel.lean:146:0: 'OrderedPartitions.Kernel.first_jump_large' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [3191/3194] Built OrderedPartitions.QuadraticTransport (1.6s)
+ℹ [3187/3194] Built OrderedPartitions.QuadraticFinite (1.5s)
+info: OrderedPartitions/QuadraticFinite.lean:67:0: 'OrderedPartitions.QuadraticExact.checked_finite' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: OrderedPartitions/QuadraticFinite.lean:68:0: 'OrderedPartitions.QuadraticExact.original_finite' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3188/3194] Built OrderedPartitions.QuadraticTransport (1.7s)
 info: OrderedPartitions/QuadraticTransport.lean:125:0: 'OrderedPartitions.QuadraticOrder.original_adjacent_of_normalized' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]
 info: OrderedPartitions/QuadraticTransport.lean:126:0: 'OrderedPartitions.QuadraticOrder.adjacent_affine' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/QuadraticTransport.lean:127:0: 'OrderedPartitions.QuadraticOrder.original_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [3192/3194] Built OrderedPartitions.FirstJumpVerified (1.2s)
+ℹ [3189/3194] Built OrderedPartitions.QuadraticFiniteOrder (1.5s)
+info: OrderedPartitions/QuadraticFiniteOrder.lean:51:0: 'OrderedPartitions.QuadraticExact.original_adjacent_of_signs' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: OrderedPartitions/QuadraticFiniteOrder.lean:52:0: 'OrderedPartitions.QuadraticExact.original_adjacent_finite' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3190/3194] Built OrderedPartitions.FirstJumpCriterion (1.7s)
+info: OrderedPartitions/FirstJumpCriterion.lean:76:0: 'OrderedPartitions.original_first_jump_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3191/3194] Built OrderedPartitions.QuadraticLarge (2.0s)
+info: OrderedPartitions/QuadraticLarge.lean:46:0: 'OrderedPartitions.QuadraticOrder.original_quadratic_large' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3192/3194] Built OrderedPartitions.FirstJumpKernel (2.6s)
+info: OrderedPartitions/FirstJumpKernel.lean:144:0: 'OrderedPartitions.Kernel.original_first_jump' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: OrderedPartitions/FirstJumpKernel.lean:145:0: 'OrderedPartitions.Kernel.first_jump_moment' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: OrderedPartitions/FirstJumpKernel.lean:146:0: 'OrderedPartitions.Kernel.first_jump_large' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3193/3194] Built OrderedPartitions.FirstJumpVerified (1.3s)
 info: OrderedPartitions/FirstJumpVerified.lean:4:0: 'OrderedPartitions.Kernel.original_first_jump' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/FirstJumpVerified.lean:5:0: 'OrderedPartitions.Kernel.original_mean_strict' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/FirstJumpVerified.lean:6:0: 'OrderedPartitions.Kernel.original_binomial_moment_from_entry' depends on axioms: [propext,
@@ -178,9 +180,7 @@ info: OrderedPartitions/FirstJumpVerified.lean:6:0: 'OrderedPartitions.Kernel.or
 info: OrderedPartitions/FirstJumpVerified.lean:7:0: 'OrderedPartitions.Kernel.markedCount_before' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/FirstJumpVerified.lean:8:0: 'OrderedPartitions.Kernel.markedCount_starts' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/FirstJumpVerified.lean:9:0: 'OrderedPartitions.Renewal.ordered_bell_geometric_error' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [3193/3194] Built OrderedPartitions.QuadraticLarge (1.9s)
-info: OrderedPartitions/QuadraticLarge.lean:46:0: 'OrderedPartitions.QuadraticOrder.original_quadratic_large' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [3194/3194] Built OrderedPartitions.InitialChambers (1.5s)
+ℹ [3194/3194] Built OrderedPartitions.InitialChambers (1.6s)
 info: OrderedPartitions/InitialChambers.lean:44:0: 'OrderedPartitions.original_quadratic_chamber' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/InitialChambers.lean:45:0: 'OrderedPartitions.original_initial_chambers' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: OrderedPartitions/InitialChambers.lean:46:0: 'OrderedPartitions.Kernel.original_binomial_moment_from_entry' depends on axioms: [propext,
@@ -405,7 +405,7 @@ kernel_replay_exit=0 OrderedPartitions.FirstJumpVerified source_sha256=24e6ec3c3
  Classical.choice,
  Quot.sound]
 replaying OrderedPartitions.InitialChambers
-kernel_replay_exit=0 OrderedPartitions.InitialChambers source_sha256=65b123681e1ff1e0db92620863da453fdbc6269c150dd28194c232f17adaa622 object_sha256=1f312a4b9deaa580b820dd51bfd72385e1a3830245aaaf8190e25ce7f368e1de
+kernel_replay_exit=0 OrderedPartitions.InitialChambers source_sha256=8531990f134226a36790df49146faee8d3852b2a1aa0feb1a039aaa7ca8db63f object_sha256=c5fe2b6e93c88a2f27f6012dbee7dfda256f539faf8502e629bcf395cfa68409
 'OrderedPartitions.QuadraticExact.cutoff02' depends on axioms: [propext, Classical.choice, Quot.sound]
 'OrderedPartitions.QuadraticExact.cutoff03' depends on axioms: [propext, Classical.choice, Quot.sound]
 'OrderedPartitions.QuadraticExact.cutoff04' depends on axioms: [propext, Classical.choice, Quot.sound]

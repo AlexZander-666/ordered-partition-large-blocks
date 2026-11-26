@@ -21,6 +21,8 @@ Under the uniform measure on ordered partitions, $\mathbb E\binom{K}{h}$ vanishe
 
 ## Verification
 
+[Source-cold verification and theorem mapping](verification/verification.md)
+
 The Lean definition encodes ordered partitions as surjections to a linearly ordered set of block positions. The main declarations are `OrderedPartitions.original_initial_chambers` and `OrderedPartitions.Kernel.original_binomial_moment_from_entry`. The first uses a recurrence from the last block, exact integer checks for small thresholds, and uniform estimates for larger thresholds. Its root counts include multiplicities. The second identifies the marked coefficients with binomial moments on the original objects.
 
 The two exact counting checks use only the Python standard library.

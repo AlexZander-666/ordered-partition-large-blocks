@@ -29,11 +29,13 @@ S_j(z)=\sum_{1\le b<j}\frac{z^b}{b!},\quad L_j(z)=\sum_{b\ge j}\frac{z^b}{b!}.
 For example, \(O_{2,2}=2+t\) and \(O_{3,2}=6+7t\). Unordered set partitions give \(1+t\) and \(1+4t\) in these cases.
 
 The list structure is classical. Ahlbach, Usatine, and Pippenger
-\cite[Theorems~2.1 and~5.2]{aup} give the free-list enumerator and the exact
+\cite[Eq.~(2) and Theorems~4 and~14]{aup} give the free-list enumerator and the exact
 complex-pole formula for \(O_{n,j}(1)\).
 Rossi \cite[Proposition~2.1 and Remark~2.2]{rossi} represents the block sizes
 in this uniform model by independent steps with probabilities
 \((\log 2)^b/b!\), conditioned on hitting \(n\).
+Alexandersson proves interlacing for the
+\href{https://www.symmetricfunctions.com/realRootedSetPartitions.htm}{singleton-or-large lift}, which orders only the large blocks.
 Djemmada's block-size refinement \cite[Theorem~4.10]{djemmada} uses
 deranged orders of the blocks and gives a different generating function.
 The RealRooted discussion \cite{rr} records finite exact ordered tests and
@@ -53,7 +55,7 @@ Fix \(j\ge2\). For every lower index \(j\le n<3j\), the rows \(O_{n,j}\) and \(O
 
 \section{A determinant inequality for ordered Bell numbers}
 
-Put \(\rho=\log2\), \(A=(2\rho)^{-1}\), \(H_0(z)=(2-e^z)^{-1}\), and \(K(z)=A^{-1}H_0(\rho z)\). Set \(k_n=[z^n]K(z)\) and \(g_s=[z^s]K(z)^2\). The exact pole expansion of Ahlbach, Usatine, and Pippenger \cite[Theorem~5.2, Eq.~(6)]{aup} yields, for \(n\ge1\),
+Put \(\rho=\log2\), \(A=(2\rho)^{-1}\), \(H_0(z)=(2-e^z)^{-1}\), and \(K(z)=A^{-1}H_0(\rho z)\). Set \(k_n=[z^n]K(z)\) and \(g_s=[z^s]K(z)^2\). The exact pole expansion of Ahlbach, Usatine, and Pippenger \cite[Theorem~14, Eq.~(6)]{aup} yields, for \(n\ge1\),
 \[
 k_n=1+\sum_{\ell\in\mathbb Z\setminus\{0\}}
      \left(\frac{\rho}{\rho+2\pi i\ell}\right)^{n+1}.
@@ -231,6 +233,7 @@ ChatGPT assisted with the analytic derivations, the implementation and
 independent replay of the formal proofs, and preparation of the manuscript.
 
 \begin{thebibliography}{9}
+\setlength{\itemsep}{2pt}
 \bibitem{alex}
 P.~Alexandersson, \emph{Real-rooted open problems}, conjecture on ordered set partitions with large blocks.
 \href{https://www.symmetricfunctions.com/realRootedOpenProblems.htm\#set-partitions-and-trees}{SymCat}.
