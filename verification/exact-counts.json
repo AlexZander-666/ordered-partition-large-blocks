@@ -1,0 +1,11 @@
+{
+  "j_range": [
+    2,
+    64
+  ],
+  "jump_pairs": 63,
+  "affine_pairs": 2016,
+  "direct_labeled_ordered_partitions": 52610,
+  "direct_max_n": 7,
+  "integer_witness": "a*v^2-b*u*v+c*u^2 < 0"
+}

@@ -1,0 +1,9 @@
+import OrderedPartitions.FirstJumpKernel
+import OrderedPartitions.AllMoments
+
+#print axioms OrderedPartitions.Kernel.original_first_jump
+#print axioms OrderedPartitions.Kernel.original_mean_strict
+#print axioms OrderedPartitions.Kernel.original_binomial_moment_from_entry
+#print axioms OrderedPartitions.Kernel.markedCount_before
+#print axioms OrderedPartitions.Kernel.markedCount_starts
+#print axioms OrderedPartitions.Renewal.ordered_bell_geometric_error

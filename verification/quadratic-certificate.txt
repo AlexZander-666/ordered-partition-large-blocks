@@ -1,0 +1,3 @@
+PASS 1224 original adjacent pairs including 48 quadratic-to-cubic jumps
+Two independent counts: last-block recurrence; marked ordered subsequence EGF.
+SHA256 of deterministically ordered integer witnesses e78822d97e70337c84e238bc87a48548d0c1e61a52c52bf60d92098628d4f7bc
