@@ -17,6 +17,8 @@ All roots below are simple and negative. Read the letters from the most negative
 
 Under the uniform measure on ordered partitions, $\mathbb E\binom{K}{h}$ vanishes for $n<hj$ and increases strictly from $n$ to $n+1$ whenever $h\ge1$ and $n+1\ge hj$. In particular, the transition from zero to the first positive term is included. Alexandersson's question about interlacing continues beyond the first cubic. [Original statement and generating function](https://github.com/PerAlexandersson/symmetricfunctions.com/commit/265ee865f973c086bd144e53b5bf24d3cc2503f1)
 
+[Read the paper](paper/main.pdf) or [download its LaTeX source](paper/main.tex).
+
 ## Verification
 
 The Lean definition encodes ordered partitions as surjections to a linearly ordered set of block positions. The main declarations are `OrderedPartitions.original_initial_chambers` and `OrderedPartitions.Kernel.original_binomial_moment_from_entry`. The first uses a recurrence from the last block, exact integer checks for small thresholds, and uniform estimates for larger thresholds. Its root counts include multiplicities. The second identifies the marked coefficients with binomial moments on the original objects.

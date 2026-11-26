@@ -1,0 +1,261 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[hidelinks,pdfauthor={Bowen Zuo},pdftitle={Large blocks in ordered set partitions}]{hyperref}
+\newtheorem{theorem}{Theorem}
+\allowdisplaybreaks[1]
+\title{Large blocks in ordered set partitions:\\
+Factorial moments and initial interlacing}
+\author{Bowen Zuo\\[2pt]\small East China University of Science and Technology}
+\date{November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Let \(X_{n,j}\) count the blocks of size at least \(j\) in a uniformly random ordered set partition of an \(n\)-element set. For every \(j\ge2\) and \(h\ge1\), the \(h\)th falling factorial moment of \(X_{n,j}\) strictly increases from size \(n\) to size \(n+1\) whenever \(n+1\ge hj\), and it is zero below size \(hj\). We prove strict consecutive interlacing of the large-block polynomials for \(j\le n<3j\), through the increase from degree two to degree three. The moment comparison follows from a determinant inequality for an ordered Bell convolution. A remainder modulo the preceding quadratic controls the sign at each of its roots.
+\end{abstract}
+
+\section{Introduction and results}
+
+An ordered set partition of \([n]\) is a list of disjoint nonempty blocks whose union is \([n]\). The order of the blocks matters. Write
+\[
+O_{n,j}(t)=\sum_{\pi}t^{X_j(\pi)},\qquad X_j(\pi)=|\{B\in\pi:|B|\ge j\}|,
+\]
+and take \(O_{0,j}=1\). Alexandersson asks whether, for each integer \(j\ge2\), these polynomials have only real roots and interlace at consecutive sizes \cite{alex}. The list structure gives
+\[
+\sum_{n\ge0}O_{n,j}(t)\frac{z^n}{n!}
+ =\frac{1}{1-S_j(z)-tL_j(z)},\qquad
+S_j(z)=\sum_{1\le b<j}\frac{z^b}{b!},\quad L_j(z)=\sum_{b\ge j}\frac{z^b}{b!}.
+\]
+For example, \(O_{2,2}=2+t\) and \(O_{3,2}=6+7t\). Unordered set partitions give \(1+t\) and \(1+4t\) in these cases.
+
+The list structure is classical. Ahlbach, Usatine, and Pippenger
+\cite[Theorems~2.1 and~5.2]{aup} give the free-list enumerator and the exact
+complex-pole formula for \(O_{n,j}(1)\).
+Rossi \cite[Proposition~2.1 and Remark~2.2]{rossi} represents the block sizes
+in this uniform model by independent steps with probabilities
+\((\log 2)^b/b!\), conditioned on hitting \(n\).
+Djemmada's block-size refinement \cite[Theorem~4.10]{djemmada} uses
+deranged orders of the blocks and gives a different generating function.
+The RealRooted discussion \cite{rr} records finite exact ordered tests and
+an affine-weight criterion for two allowed sizes. The full marked series
+\(L_j\) has several terms even in a quadratic row, whereas the rational
+generating function in Br\"and\'en--Leite \cite[Theorem~4.5]{bl} has
+a single marked monomial. Here all positive block sizes are allowed, and
+the main inequality compares normalized moments at adjacent sizes.
+
+\begin{theorem}
+Fix \(j\ge2\) and \(h\ge1\). The normalized binomial moment \(\mathbb E\binom{X_{n,j}}{h}\) vanishes for \(n<hj\), is positive for \(n\ge hj\), and is strictly increasing from \(n\) to \(n+1\) whenever \(n+1\ge hj\). The same holds for \(\mathbb E(X_{n,j})_h=h!\,\mathbb E\binom{X_{n,j}}h\), with the falling factorial convention.
+\end{theorem}
+
+\begin{theorem}
+Fix \(j\ge2\). For every lower index \(j\le n<3j\), the rows \(O_{n,j}\) and \(O_{n+1,j}\) have simple negative roots and strictly interlace. In an equal-degree pair the old row starts the alternating order. At a degree increase, the new row starts and ends it. Rows \(n<j\) are positive constants, and the conclusion gives real-rootedness through \(O_{3j,j}\).
+\end{theorem}
+
+\section{A determinant inequality for ordered Bell numbers}
+
+Put \(\rho=\log2\), \(A=(2\rho)^{-1}\), \(H_0(z)=(2-e^z)^{-1}\), and \(K(z)=A^{-1}H_0(\rho z)\). Set \(k_n=[z^n]K(z)\) and \(g_s=[z^s]K(z)^2\). The exact pole expansion of Ahlbach, Usatine, and Pippenger \cite[Theorem~5.2, Eq.~(6)]{aup} yields, for \(n\ge1\),
+\[
+k_n=1+\sum_{\ell\in\mathbb Z\setminus\{0\}}
+     \left(\frac{\rho}{\rho+2\pi i\ell}\right)^{n+1}.
+\]
+Since \(\rho/(2\pi)<1/8\) and \(\sum_{\ell=1}^\infty\ell^{-2}<2\), the bound
+\[
+|k_n-1|\le\tfrac12\,8^{-n}
+\tag{1}
+\]
+holds for \(n\ge1\). For \(n=0\), use \(k_0=2\rho\) and \(0.69<\rho<0.70\).
+
+Differentiating \(H_0\) gives \(K'=K^2-\rho K\) and therefore
+\[
+g_s=(s+1)k_{s+1}+\rho k_s.
+\]
+By (1), \(|g_s-(s+1+\rho)|\le (21/50)4^{-s}\), using \(s+1\le2^s\). Consequently \(s+1\le g_s\le s+3\) and
+\[
+g_{s+1}-g_s\ge1-\tfrac{21}{50}(1+\tfrac14)=\tfrac{19}{40}.
+\]
+When \(n\ge2\) and \(0\le s\le n\), we have \(k_n\ge127/128\), \(k_{n+1}-k_n\le (9/16)8^{-n}\), and \((n+3)8^{-n}\le5/64\). It follows that
+\[
+k_n g_{s+1}-k_{n+1}g_s
+\ \ge\ \frac{127}{128}\frac{19}{40}-\frac9{16}\frac5{64}
+\ >\ \frac25 .
+\tag{2}
+\]
+Thus for any \(V(z)=\sum_{r\ge0}v_rz^r\) with \(v_r\ge0\), setting \(M_n=[z^n]VK^2\) gives
+\[
+\begin{aligned}
+k_n M_{n+1}-k_{n+1}M_n
+&=\sum_{r=0}^n v_r\bigl(k_n g_{n+1-r}-k_{n+1}g_{n-r}\bigr)
+   +k_nv_{n+1}g_0 .
+\end{aligned}
+\tag{3}
+\]
+In particular it exceeds \(2v_r/5\) if \(n\ge2\), \(r\le n\), and \(v_r>0\).
+
+\section{Factorial moments}
+
+Mark a selected \(h\)-subset of the large blocks. In their original order, the \(h\) selected blocks separate \(h+1\) arbitrary lists of blocks. By the labelled product rule, this gives the numerator of \(\mathbb E\binom{X_{n,j}}h\) as \(n![z^n]L_j(z)^h H_0(z)^{h+1}\). Equivalently, take the coefficient of \(s^h\) after substituting \(t=1+s\) in the EGF. There is no permutation factor for the selected blocks.
+
+Write \(L(z)=L_j(\rho z)\) and \(q_j=[z^j]L=\rho^j/j!>0\). Since there are \(n![z^n]H_0\) partitions, the moment is
+\[
+A^h\,\frac{[z^n]L^hK^{h+1}}{k_n}.
+\]
+Use (3) with \(V=L^hK^{h-1}\). It has nonnegative coefficients and starts in degree \(hj\) with a positive coefficient. Both moments are zero when \(n+1<hj\). When \(n+1=hj\), the first is zero and the second is positive, including \(j=2,h=1,n=1\). Finally \(n\ge hj\) implies \(n\ge2\), so the determinant in (3) is strictly positive. This proves Theorem 1.
+
+\section{Roots at the first degree jump}
+
+All coefficients of \(O_{n,j}\) below or at \(\lfloor n/j\rfloor\) are positive: use the prescribed number of size-\(j\) blocks and fill the remaining labels with singleton blocks. Every row with \(j\le n<2j\) is consequently linear and has one negative root. If \(\mu_n=\mathbb E X_{n,j}\), its root is \(1-1/\mu_n\), which strictly increases with \(\mu_n>0\). Theorem 1 gives the consecutive order of the linear roots.
+
+For the jump let \(n=2j-1\) and write
+\[
+a=k_n,\qquad b=k_{n+1},\qquad
+x=[z^n]LK^2,\qquad y=[z^{n+1}]LK^2.
+\]
+Now \(\mu_n=x/(2\rho a)\) and \(\mu_{n+1}=y/(2\rho b)\). The normalized upper row at \(t=1+s\) is \(1+\mu_{n+1}s+\nu s^2\), with \(\nu=(2\rho)q_j^2/b\). Indeed exactly two large blocks at size \(2j\) must both have size \(j\), so their unnormalized coefficient is \(\binom{2j}{j}\). The upper row is negative at the old root \(s=-1/\mu_n\) precisely when
+\[
+\mu_n(\mu_{n+1}-\mu_n)>\nu
+\quad\Longleftrightarrow\quad
+x(ay-bx)>(2\rho)^3a^2q_j^2.
+\tag{4}
+\]
+The \(q_j\) term gives \(x\ge q_j g_{j-1}\ge jq_j\). By (3), \(ay-bx>(2/5)q_j\). For \(j\ge7\) these bounds imply (4), since \(a\le129/128\) and
+\[
+(2\rho)^3 a^2 < (7/5)^3(129/128)^2 < (2/5)\,7 .
+\]
+
+For \(2\le j\le6\) use the exact recurrence that chooses the final block,
+\[
+O_{n,j}(t)=\sum_{\ell=1}^n \binom n\ell\,t^{[\ell\ge j]}O_{n-\ell,j}(t).
+\]
+Writing \(a_0+b_0t\) and \(c_0+d_0t+e_0t^2\) for the two respective rows gives the following integers.
+
+\begin{center}
+\footnotesize\setlength{\tabcolsep}{3.8pt}
+\begin{tabular}{rrrrrrr}
+\hline
+$j$ & $a_0$ & $b_0$ & $c_0$ & $d_0$ & $e_0$ & $b_0^2c_0-a_0b_0d_0+a_0^2e_0$ \\
+\hline
+$2$ & $6$ & $7$ & $24$ & $45$ & $6$ & $-498$ \\
+$3$ & $450$ & $91$ & $3690$ & $973$ & $20$ & $-5237460$ \\
+$4$ & $45570$ & $1723$ & $521640$ & $24125$ & $70$ & $-200253740190$ \\
+$5$ & $7044450$ & $42811$ & $101519250$ & $728061$ & $252$ & $-21000655980626700$ \\
+$6$ & $1621316466$ & $1316107$ & $28065324210$ & $26242461$ & $924$ & $-4954951576916363277948$ \\
+\hline
+\end{tabular}
+\end{center}
+
+Thus the quadratic is negative at the old negative root in every case. The upper row has positive leading and constant coefficients. It tends to positive infinity on the left and is positive at \(0\), so it has a root on each side of the old root in \((-\infty,0)\). Its degree is exactly two, so both roots are simple.
+
+\section{Consecutive quadratic rows and the first cubic row}
+
+Let \(2j\le n<3j\). In any common increasing affine coordinate \(y\) with \(y=0\) at \(t=1\), divide each row by its value at \(1\). Write them as
+\[
+P=1+ay+by^2,\qquad Q=1+(a+\delta_a)y+(b+\delta_b)y^2+cy^3.
+\]
+Here \(b>0\), and \(c\ge0\) vanishes except at the degree increase. Modulo \(P\) we have \(Q(y)=y(S+Ty)\), where \(S=\delta_a-c/b\) and \(T=\delta_b-ca/b\). In particular
+\[
+S,T>0,\qquad a>T/S+bS/T
+\tag{5}
+\]
+implies \(P(-S/T)<0\). The two roots of \(P\) straddle the negative test point and are both negative. At these two roots, \(Q\) has respective signs \(+,-\). Since \(Q(0)=1\), the two roots \(s_1,s_2\) of a quadratic \(Q\) satisfy \(r_1<s_1<r_2<s_2\), where \(r_1,r_2\) are the roots of \(P\). When \(c>0\), there is a third root to the left because \(Q\) tends to negative infinity there. The degree forces simplicity in both cases. Returning to \(t\) preserves the order, and \(O_{n,j}(t)>0\) for \(t\ge0\) forces all the real roots to be negative.
+
+For \(j\ge50\), set \(D=Aq_j\) and choose \(y=D(t-1)\). Write
+\[
+B(z)=L(z)/(q_jz^j),\qquad e_d=k_d-1,\qquad n=2j+m,\quad 0\le m<j .
+\]
+Section 3 gives the \(h\)th coefficient of the true normalized row in \(y\) as
+\[
+\frac{[z^{n-hj}]B^hK^{h+1}}{1+e_n}.
+\tag{6}
+\]
+The old coefficients of degree one and two use indices \(j+m\) and \(m\), respectively. The new cubic coefficient is at most \(4\): when present, it is \(k_0^4/k_{3j}=(2\rho)^4/k_{3j}\).
+
+Put \(w_s=[z^s]K^3\), extending both \(w_s\) and \(g_s\) by zero for negative indices. The identity for \(K'\) yields
+\[
+w_s=\tfrac12(s+1)(s+2)k_{s+2}
+     +\tfrac32\rho(s+1)k_{s+1}+\rho^2 k_s.
+\]
+For \(s\ge0\), (1) bounds the effect of replacing each \(k\) by \(1\) by \(0.32\,2^{-s}\). This follows from \((s+1)(s+2)\le2\cdot4^s\), \(s+1\le2^s\), and \(1/128+1.05/16+0.245<0.32\). Hence
+\[
+\tfrac12(s+1)(s+2)\le w_s\le\tfrac12(s+4)^2,\qquad
+s+2\le w_{s+1}-w_s\le s+4.
+\]
+In the increment bound the main term is \(s+2+1.5\rho\) and its error is at most \(0.48\). Similarly, \(|g_{s+1}-g_s-1|\le0.525\,4^{-s}\). At \(s=-1\) the two increments are \(k_0^2<2\) and \(k_0^3<3\), respectively.
+
+The coefficients of \(B\) are bounded in degree \(i\) by \((0.7/51)^i\), so their sum is below \(1.014\), and the coefficient sum of \(B^2\) is below \(1.029\). Convolution with \(g\) and \(w\) now bounds the raw coefficients and their differences. For the raw linear coefficient at \(j+m\), the \(B_0=1\) contribution is at least \(j+m+1\) and the full convolution is at most \(1.014(j+m+3)\). Its difference is bounded below by \(1-0.525\,4^{-50}\) and above by \(1+0.525\,4^{-50}+2(0.014)\). For the raw quadratic coefficient at \(m\), the bounds are \(\tfrac12(m+1)(m+2)\) and \(\tfrac12(1.029)(m+4)^2\). Its difference is between \(m+2\) and \(1.029(m+4)\), including the \(s=-1\) contribution. Restoring the normalization in (6) changes each bound by less than \(0.001\): both raw rows are bounded here by \((n+6)^2\), and the combined cost is at most \((n+6)^2(8^{-n}+8^{-n-1})<0.001\) for \(n\ge100\). This gives
+\[
+\begin{aligned}
+j+m&\le a\le1.02(j+m+3),&
+0.99&\le\delta_a\le1.04,\\
+0.49(m+1)(m+2)&\le b\le0.52(m+4)^2,&
+m+1.9&\le\delta_b\le1.04(m+4).
+\end{aligned}
+\]
+At the degree increase \(m=j-1\), we have \(c/b<0.004\) and \(ca/b<0.34\). Indeed use \(c\le4\), \(b\ge0.49j(j+1)\) and \(a\le1.02(2j+2)\). With \(c=0\) the same upper bounds hold. Therefore \(0.98\le S\le1.04\) and \(m+1.5\le T\le1.04(m+4)\). In particular
+\[
+\frac{T}{S}+\frac{bS}{T}
+\le1.07(m+4)+0.55\frac{(m+4)^2}{m+1.5}
+\le1.62m+10.33<j+m\le a .
+\]
+The second inequality uses \((m+4)^2/(m+1.5)\le m+11\), and the last strict inequality follows from \(0\le m<j\), \(j\ge50\). This proves (5) at every large cutoff.
+
+For \(2\le j\le49\) the exact finite certificate works directly in \(t\). Write the original rows as \(P_0=a_0+b_0t+c_0t^2\) and \(Q_0=d_0+e_0t+f_0t^2+g_0t^3\). The remainder of \(c_0^2Q_0\) modulo \(P_0\) is \(Ut+V\), where
+\[
+U=c_0^2e_0-c_0g_0a_0-(c_0f_0-g_0b_0)b_0,\qquad
+V=c_0^2d_0-(c_0f_0-g_0b_0)a_0 .
+\]
+The recurrence of Section 4 gives \(U<0\) and \(a_0U^2-b_0UV+c_0V^2<0\) on each of the 1,224 pairs. The certificate also checks the full row coefficients against an independent EGF convolution. Because \(U^2 P_0(-V/U)<0\), \(P_0\) has two roots straddling the test point and \(Q_0\) has signs \(+,-\) at these two roots. The resulting signs at the ends again give exactly the claimed roots. This completes Theorem 2. The self-contained Python checker \texttt{anc/verify.py} reproduces the finite calculation and prints its integer-witness digest.
+
+
+\section{Formal verification}
+The proof starts from original ordered lists of labeled blocks.
+The module \path{InitialChambers} proves
+\path{original_initial_chambers} for the range \(j\le n<3j\), with
+the root patterns of Theorem~2. The module \path{AllMoments}
+proves the strict moment comparison \path{original_binomial_moment_from_entry}.
+Its companions \path{markedCount_before} and \path{markedCount_starts} check
+vanishing and strict positivity on first entry. The proof of (1) in
+Lean uses a rational renewal certificate independently of the pole formula.
+The full frozen source was rebuilt with warnings treated as errors.
+All 43 project modules passed separate kernel replays. The 123 in-source
+axiom printouts and 48 additional cutoff audits reported only
+\texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}.
+
+\paragraph{Code and data availability.}
+The Lean sources, finite certificates, and reproduction instructions accompany
+the manuscript. They will be publicly available in the
+\href{https://github.com/AlexZander-666/ordered-partition-large-blocks}{companion repository}
+when the manuscript is released.
+
+\paragraph{Disclosure.}
+ChatGPT assisted with the analytic derivations, the implementation and
+independent replay of the formal proofs, and preparation of the manuscript.
+
+\begin{thebibliography}{9}
+\bibitem{alex}
+P.~Alexandersson, \emph{Real-rooted open problems}, conjecture on ordered set partitions with large blocks.
+\href{https://www.symmetricfunctions.com/realRootedOpenProblems.htm\#set-partitions-and-trees}{SymCat}.
+
+\bibitem{aup}
+C.~Ahlbach, J.~Usatine, and N.~Pippenger, Barred preferential arrangements,
+\emph{Electron. J. Combin.} \textbf{20} (2013), no.~2, P55.
+\href{https://doi.org/10.37236/2482}{doi:10.37236/2482}.
+
+\bibitem{rossi}
+G.~Rossi, \emph{Hall's condition between adjacent levels of the face lattice of the permutohedron},
+\href{https://arxiv.org/abs/2611.34537v1}{arXiv:2611.34537v1}, 2026.
+
+\bibitem{djemmada}
+Y.~Djemmada, \emph{On deranged unit-interval parking functions and the deranged Bell numbers},
+\href{https://arxiv.org/abs/2607.01273v2}{arXiv:2607.01273v2}, 2026.
+
+\bibitem{rr}
+P.~Alexandersson, \emph{RealRooted}, issue~2590 and pull request~2665, 2026.
+\href{https://github.com/PerAlexandersson/RealRooted/issues/2590}{Issue~2590},
+\href{https://github.com/PerAlexandersson/RealRooted/pull/2665}{PR~2665}.
+
+\bibitem{bl}
+P.~Br\"and\'en and L.~S.~M.~Leite, Totally nonnegative matrices, chain enumeration and zeros of polynomials,
+\emph{Adv. Math.} \textbf{487} (2026), 110760.
+\href{https://doi.org/10.1016/j.aim.2025.110760}{doi:10.1016/j.aim.2025.110760}.
+\end{thebibliography}
+\end{document}
