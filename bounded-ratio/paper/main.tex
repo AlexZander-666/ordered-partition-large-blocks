@@ -1,0 +1,274 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[hidelinks,pdfauthor={Bowen Zuo},pdftitle={Bounded-ratio interlacing for ordered set partitions}]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\renewcommand{\labelitemi}{\(\bullet\)}
+\allowdisplaybreaks[1]
+\title{Bounded-ratio interlacing for ordered set partitions}
+\author{Bowen Zuo\\[2pt]\small East China University of Science and Technology}
+\date{November 2026}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+Let \(O_{n,j}(t)\) enumerate ordered set partitions of an \(n\)-element set, marking each block of size at least \(j\) by \(t\). For each fixed real \(C>1\), we prove that the original rows at consecutive sizes \(n,n+1\) have simple negative zeros in strict alternating order whenever \(j\) is sufficiently large and \(j\le n\le Cj\). A common affine rescaling gives the finite-volume hard-rod polynomial and a limit for the first difference of consecutive rows. A unit-delay equation gives the strict signs at the bounded roots. At an integral ratio a root of the old row can escape to the left. A relative lower bound for the change of its leading coefficient gives the sign at that root directly.
+\end{abstract}
+
+\section{The ordered large-block conjecture}
+
+An ordered set partition of \([n]\) is a list of disjoint nonempty blocks covering \([n]\). Let \(X_j(\pi)\) be the number of its blocks of size at least \(j\). For integers \(j\ge2\) put
+\[
+ O_{n,j}(t)=\sum_{\pi}t^{X_j(\pi)},\qquad
+ S_j(z)=\sum_{1\le b<j}\frac{z^b}{b!},\qquad
+ L_j(z)=\sum_{b\ge j}\frac{z^b}{b!}.
+\]
+The empty list gives \(O_{0,j}=1\). The labelled list construction gives
+\begin{equation}\label{eq:egf}
+ \sum_{n\ge0} O_{n,j}(t)\frac{z^n}{n!}
+ =\frac{1}{1-S_j(z)-t L_j(z)} .
+\end{equation}
+Every coefficient from degree \(0\) through \(\lfloor n/j\rfloor\) is positive. For a prescribed degree, take that many blocks of size \(j\) and make the remaining labels singleton blocks. Thus the degree is exactly \(\lfloor n/j\rfloor\).
+
+Alexandersson asks whether the ordered rows are real rooted and interlace at consecutive ranks for every cutoff \cite{alex}. The unordered model has the exponential of \(S_j+tL_j\) as its generating function. Recent fixed-cutoff work of Fang concerns this unordered model \cite[Theorem~1]{fang}. The ordered lift of the singleton-or-large restriction orders the large blocks and leaves a set of singletons, giving \(e^z/(1-tL_j(z))\) \cite{lift}. The exact two-size result in the RealRooted discussion \cite{rr} has two permitted block sizes, whereas \eqref{eq:egf} uses all positive sizes.
+
+\begin{theorem}\label{thm:main}
+For every fixed real \(C>1\), there exists an integer \(K(C)\ge2\) such that for all integers \(j\ge K(C)\) and \(j\le n\le Cj\), all zeros of \(O_{n,j}\) and \(O_{n+1,j}\) are simple and negative. Write \(r_1<\cdots<r_d\) for the zeros of the old row, where \(d=\lfloor n/j\rfloor\), and write \(s_1<\cdots<s_e\) for the zeros of the new row. Their order is
+\[
+\begin{array}{ll}
+ r_1<s_1<r_2<s_2<\cdots<r_d<s_d<0,& e=d,\\[2pt]
+ s_1<r_1<s_2<r_2<\cdots<s_d<r_d<s_{d+1}<0,& e=d+1 .
+\end{array}
+\]
+\end{theorem}
+
+The bound \(Cj\) applies to the lower index \(n\). The initial-range theorem in \cite{initial} covers \(j\le n<3j\) for every \(j\ge2\), and also proves strict growth of the positive-order factorial moments from their first nonzero rank. Arbitrarily many fixed degree ranges are covered by Theorem~\ref{thm:main}, with a nonexplicit threshold \(K(C)\). The behavior as \(n\to\infty\) for a fixed \(j\) remains open in the unrestricted ordered family.
+
+\begin{corollary}\label{cor:exception}
+For fixed \(C\), only finitely many pairs \((j,n)\) with \(2\le j\le n\le Cj\) can fail the conclusion. Along any sequence of pairwise distinct counterexample pairs \((j,n)\) with \(2\le j\le n\), the ratio \(n/j\) tends to infinity.
+\end{corollary}
+
+Indeed, any exceptions at a fixed \(C\) have \(j<K(C)\), and each such cutoff leaves finitely many lower indices \(n\le Cj\). A sequence of distinct counterexamples eventually leaves each of these finite sets.
+
+\section{Normalized coefficients and their first differences}
+
+Put
+\[
+ \begin{gathered}
+ \rho=\log 2,\qquad A=(2\rho)^{-1},\qquad q_j=\frac{\rho^j}{j!},\\
+ H(z)=\frac{1}{2-e^{\rho z}},\quad K(z)=\frac{H(z)}A,\quad
+ k_n=[z^n]K(z),\qquad B_j(z)=\sum_{b\ge0}\frac{q_{j+b}}{q_j}z^b .
+ \end{gathered}
+\]
+For each pair of adjacent ranks use the same variable \(y=Ajq_j(t-1)\). Divide each row by its value at \(1\), defining
+\[
+ P_{n,j}(y)=\frac{O_{n,j}(1+y/(Ajq_j))}{O_{n,j}(1)},\qquad
+ a_h(n,j)=[y^h]P_{n,j}(y).
+\]
+To count the coefficient of \((t-1)^h\) one chooses \(h\) of the large blocks and lists them in their order in the partition. They separate \(h+1\) unrestricted lists of blocks. Thus the labelled generating function for this count is \(L_j^h(2-e^z)^{-h-1}\). Substitution of \(\rho z\) and division by the normalization gives the exact formula
+\begin{equation}\label{eq:coeff}
+ a_h(n,j)=\frac{[z^{n-hj}]B_j(z)^h K(z)^{h+1}}{j^h k_n} .
+\end{equation}
+An index \(n-hj<0\) gives zero. There is no \(h!\) in the exact numerator. Also \(a_0(n,j)=1\).
+
+\begin{lemma}\label{lem:limit}
+Along any sequence with \(j\to\infty\) and \(n/j\to x>1\) finite, put
+\[
+ \Phi_x(y)=1+\sum_{h\ge1}\frac{(x-h)_+^h}{h!}\,y^h,\qquad
+ u_+=\max(u,0).
+\]
+Then \(P_{n,j}\to\Phi_x\) and \(j(P_{n+1,j}-P_{n,j})\to y\Phi_{x-1}\) coefficientwise in a common bounded degree.
+\end{lemma}
+
+\begin{proof}
+The poles of \(H\) are \(1+2\pi i\ell/\rho\) for \(\ell\in\mathbb Z\), and \((1-z)K(z)\) extends analytically through \(z=1\) with value 1 there. Subtracting the pole \(1/(1-z)\) and applying Cauchy's estimate on a fixed circle of radius greater than 1 gives \(k_n=1+O(\eta^n)\) for some \(0<\eta<1\). Fix \(h\ge1\), and put
+\[
+ D_{h,j}(z)=B_j(z)^h((1-z)K(z))^{h+1},\qquad
+ U_j(s)=[z^s]B_j(z)^h K(z)^{h+1},
+\]
+with \(U_j(s)=0\) for \(s<0\). The coefficients of \(B_j\) are bounded by \((\rho/(j+1))^b\) in degree \(b\). It follows that \(D_{h,j}\) is uniformly bounded on \(|z|\le 3/2\), and \(D_{h,j}(1)=1+O_h(j^{-1})\). Dividing \(D_{h,j}(z)-D_{h,j}(1)\) by \(1-z\) gives an analytic function \(E_{h,j}\) uniformly bounded on any fixed smaller disk of radius greater than 1. Consequently
+\[
+ \begin{aligned}
+ U_j(s)
+   &=D_{h,j}(1)\binom{s+h}{h}+O_h((s+1)^{h-1}),\\
+ U_j(s+1)-U_j(s)
+   &=D_{h,j}(1)\binom{s+h}{h-1}+O_h((s+1)^{h-2})
+       \qquad(h\ge2).
+ \end{aligned}
+\]
+In the first line the error is the coefficient of \(E_{h,j}(z)/(1-z)^h\). In the second it is the coefficient at \(s+1\) of \(E_{h,j}(z)/(1-z)^{h-1}\). For \(h=1\), this latter error is \(O(\eta^s)\), with a fixed \(\eta<1\) large enough. These estimates apply for \(s\ge0\).
+
+Set \(s=n-hj\). If \(x>h\), then \(s/j\to x-h>0\), so the two main terms, divided by \(j^h\) and \(j^{h-1}\), respectively, tend to \((x-h)^h/h!\) and \((x-h)^{h-1}/(h-1)!\). The factor \(1/k_{n+1}\) tends to 1. The difference of the two denominators only adds
+\[
+ \frac{U_j(s)}{j^{h-1}}\left(\frac{1}{k_{n+1}}-\frac{1}{k_n}\right)
+ =O_h(j\eta^n)
+\]
+in the scaled first difference because \(n/j\) is bounded. If \(x<h\), both coefficients vanish eventually. If \(x=h\), then \(h\ge2\) and \(s=o(j)\). Both scaled quantities tend to zero when \(s\ge0\). At \(s=-1\), \(U_j(s+1)-U_j(s)=K(0)^{h+1}\), a constant independent of \(j\), so its contribution divided by \(j^{h-1}\) also tends to zero. Lower \(s\) gives zero in both rows. The coefficient of degree zero is 1 and its difference is zero. Finally \(y\Phi_{x-1}\) has coefficient \((x-h)_+^{h-1}/(h-1)!\) at degree \(h\ge2\) and coefficient 1 at degree one. This proves both limits.
+\end{proof}
+
+\section{A unit-delay sign rule}
+
+The coefficients of \(\Phi_x\) are the configuration volumes of unit rods on a line segment of length \(x\). Indeed, for \(h\) rods in increasing order, subtract the mandatory spacings from their starting positions. The resulting ordered simplex has volume \((x-h)^h/h!\) for \(x>h\), and the volume is zero for \(x\le h\). This is the finite-volume Tonks formula \cite[Section~6.3.2, Eq.~(6.59) in the linked edition]{arovas}. Its zero geometry in the limit of large volume has a classical literature \cite{penrose}. The weighted renewal theorem of Ahlberg and Alexandersson \cite{renewal} also gives a discrete approximation with coefficients \(\binom{N-Lh}{h}\). Taking \(N=\lfloor Lx\rfloor\) and activity \(y/L\) yields \(\Phi_x\) and weak interlacing at lengths one apart by continuity. The argument below gives strict signs at those lengths.
+
+Extend \(\Phi_x=1\) for \(x\le1\). For each fixed \(y<0\), \(F(x)=\Phi_x(y)\) is continuous and differentiable for \(x>1\), with
+\begin{equation}\label{eq:delay}
+ F'(x)=yF(x-1)\qquad(x>1).
+\end{equation}
+This follows by termwise differentiation of the locally finite sum, including the integer lengths \(x\ge2\) since a new term \((x-h)_+^h\) has derivative zero at such an entry.
+
+\begin{lemma}\label{lem:delay}
+Distinct zeros of \(F\) have distance greater than 1. If \(F(u)=0\), then \(F(u-1)F(u+1)<0\).
+\end{lemma}
+\begin{proof}
+Every zero is greater than 1. If \(s<t\le s+1\) were zeros, Rolle's theorem and \eqref{eq:delay} would give a zero \(z\in(s-1,t-1)\), so \(z<s\). Applying Rolle again between \(z\) and \(s\) gives a zero \(w\in(z-1,s-1)\). Then \(w<z<w+1\), and the upper zero \(z\) lies below \(t-1\). Repeating would produce a zero at most 1 after finitely many steps. This proves the separation, including the case of distance exactly 1. For the sign, the mean value theorem gives \(F(u+1)=yF(v-1)\) for some \(u<v<u+1\). The function \(F\) is nonzero on \([u-1,v-1]\) by the separation just proved. Hence \(F(v-1)\) and \(F(u-1)\) have the same sign, while \(y<0\).
+\end{proof}
+
+\begin{lemma}\label{lem:rods}
+For \(d\ge1\) and \(d<x\le d+1\), \(\Phi_x\) has \(d\) simple negative zeros. The \(d-1\) zeros of \(\Phi_{x-1}\) are simple and occur one in each gap between consecutive zeros of \(\Phi_x\). In particular,
+\[
+ \frac{\Phi_{x-1}(r)}{\Phi'_x(r)}>0
+ \qquad\text{when }\Phi_x(r)=0,
+\]
+where the prime denotes derivative with respect to \(y\).
+\end{lemma}
+\begin{proof}
+For \(d=1\), \(\Phi_x=1+(x-1)y\) and \(\Phi_{x-1}=1\). For \(d\ge2\), apply induction to \(x-1\). At the \(i\)th zero \(r_i\) of \(\Phi_{x-1}\), numbered from the left, \(\Phi_{x-2}(r_i)\) has sign \((-1)^{d-1-i}\) by the alternating order and its positive leading coefficient. Lemma~\ref{lem:delay} with length \(u=x-1\) gives sign \((-1)^{d-i}\) for \(\Phi_x(r_i)\). Together with the signs \((-1)^d\) far to the left and \(+1\) at \(y=0\), these yield one zero of \(\Phi_x\) in each of the \(d\) brackets, by continuity. Degree \(d\) forces simplicity and exhausts the roots. At its \(i\)th zero, both \(\Phi_{x-1}\) and \(\Phi'_x\) have sign \((-1)^{d-i}\) by their factorizations and positive leading coefficients.
+\end{proof}
+
+\section{The leading coefficient at an integer ratio}
+
+We need a relative estimate even when the old leading coefficient tends to zero. The pole formula for ordered Bell numbers \cite[Theorem~14, Eq.~(6)]{aup} gives, for \(n\ge2\),
+\[
+ k_n=1+\sum_{\ell\in\mathbb Z\setminus\{0\}}
+      \left(\frac{\rho}{\rho+2\pi i\ell}\right)^{n+1}.
+\]
+Since \(\rho/(2\pi)<1/8\) and \(\sum_{\ell\ge1}\ell^{-2}<2\), it follows that
+\begin{equation}\label{eq:k}
+ |k_n-1|\le \tfrac12\,8^{-n}\qquad(n\ge0).
+\end{equation}
+At \(n=0,1\) this follows directly from \(k_0=2\rho\), \(k_1=2\rho^2\) and \(0.69<\rho<0.70\).
+
+Put \(g_s=[z^s]K^2\). The differential equation \(K'=K^2-\rho K\) gives \(g_s=(s+1)k_{s+1}+\rho k_s\). By \eqref{eq:k} and \(s+1\le2^s\),
+\[
+ |g_s-(s+1+\rho)|\le \tfrac{21}{50}\,4^{-s},\qquad
+ s+1\le g_s\le s+3,\qquad g_{s+1}-g_s\ge \tfrac{19}{40}.
+\]
+For \(n\ge2\), \(k_n\ge127/128\), \(k_{n+1}-k_n\le(9/16)8^{-n}\), and \((n+3)8^{-n}\le5/64\). Thus for \(0\le s\le n\),
+\begin{equation}\label{eq:barrier}
+ k_ng_{s+1}-k_{n+1}g_s
+ \ge \frac{127}{128}\frac{19}{40}-\frac9{16}\frac5{64}>\frac25 .
+\end{equation}
+
+\begin{lemma}\label{lem:growth}
+For \(j\ge2,\ h\ge1,\ m\ge0\), and \(n=hj+m\),
+\[
+ 0<a_h(n,j)\le4(m+3)\bigl(a_h(n+1,j)-a_h(n,j)\bigr).
+\]
+\end{lemma}
+\begin{proof}
+Set \(V=B_j^h K^{h-1}=\sum_{r\ge0}v_rz^r\), so \(v_r\ge0\), and write \(U_s=[z^s]VK^2\). Put \(S=\sum_{r=0}^m v_r\). We have \(0<U_m\le(m+3)S\). The convolution and \eqref{eq:barrier} give
+\[
+ k_n U_{m+1}-k_{n+1}U_m
+  = \sum_{r=0}^m v_r\bigl(k_ng_{m+1-r}-k_{n+1}g_{m-r}\bigr)+k_n v_{m+1}g_0
+  \ge(2/5)S .
+\]
+Because \(k_{n+1}\le3/2<4(2/5)\), the right side multiplied by \(4(m+3)\) is at least \(k_{n+1}U_m\). Divide by \(j^h k_n k_{n+1}>0\) and use \eqref{eq:coeff}.
+\end{proof}
+
+\begin{lemma}\label{lem:escape}
+Suppose \(j\to\infty\) and \(n/j\to d\), where \(d\ge2\) is an integer and \(n\ge dj\). For every fixed \(T\in\mathbb R\), eventually \(P=P_{n,j}\) has a root \(r<T\) with \((-1)^dP_{n+1,j}(r)>0\).
+\end{lemma}
+\begin{proof}
+Eventually both degrees are \(d\). Write \(Q=P_{n+1,j}\), \(A_0=[y^d]P\), \(B_0=[y^{d-1}]P\), and \(\Delta=[y^d](Q-P)\). Lemma~\ref{lem:limit} gives \(A_0\to0\), \(B_0\to1/(d-1)!\), a uniform bound \(M\) for the lower coefficients of \(P\), and a uniform bound \(N\) for \(j\) times the lower coefficients of \(Q-P\), in absolute value. By Lemma~\ref{lem:growth}, \(0<A_0\le4(m+3)\Delta\) with \(m=n-dj=o(j)\), so \(A_0/j=o(\Delta)\).
+
+Take the reversals \(P^\#(z)=z^dP(1/z)\) and \(Q^\#(z)=z^dQ(1/z)\). Put \(\epsilon=2A_0/B_0\). Eventually \(0<\epsilon\le1\) and the constant and linear terms of \(P^\#(-\epsilon)\) sum to \(-A_0\). The tail has absolute value at most \((d+1)M\epsilon^2=o(A_0)\), so \(P^\#(-\epsilon)<0<P^\#(0)\). Choose a root \(\xi\in(-\epsilon,0)\). Then
+\[
+ Q^\#(\xi)=(Q^\#-P^\#)(\xi)\ge \Delta-(d+1)(N/j)\epsilon>0 .
+\]
+The last strict inequality uses \(A_0/j=o(\Delta)\) and a positive lower bound for \(B_0\). Now \(r=1/\xi<-1/\epsilon\), which eventually lies below \(T\). It is a root of \(P\), and \(Q^\#(\xi)=\xi^d Q(r)>0\) gives the sign.
+\end{proof}
+
+\section{Uniform transfer to the finite rows}
+
+Suppose Theorem~\ref{thm:main} fails for a fixed \(C>1\). Choose a counterexample sequence with \(j\to\infty\) and \(n/j\in[1,C]\). Along a subsequence let \(n/j\to x\in[1,C]\).
+
+If \(x=1\), both rows are eventually linear, with positive coefficients. With \(\mu_n=O'_{n,j}(1)/O_{n,j}(1)\), the original root is \(1-1/\mu_n\). Lemma~\ref{lem:growth} for \(h=1\), together with \(a_1(n,j)=\mu_n/(Ajq_j)\), implies that \(\mu_{n+1}>\mu_n\). The two negative roots are therefore in the required order.
+
+Now suppose \(x>1\) and let \(d_0=\deg\Phi_x\). By Lemma~\ref{lem:rods}, its zeros are simple and negative. The convergence in bounded degree gives an old root \(r_{i,j}\to r_i\) near each of these zeros. Indeed, choose disjoint closed intervals of negative numbers about the zeros, on each of which the derivative of \(\Phi_x\) has a constant strict sign and the endpoint values have opposite signs. Uniform convergence of the polynomials and their derivatives on these intervals gives a unique simple zero in each interval. Shrinking the intervals gives convergence to \(r_i\). Evaluating the first-difference limit at these moving roots gives
+\[
+ jQ(r_{i,j})\longrightarrow r_i\Phi_{x-1}(r_i),\qquad Q=P_{n+1,j}.
+\]
+Its sign is \(-\operatorname{sgn}\Phi'_x(r_i)=(-1)^{d_0-i+1}\). Thus the new row has a zero between consecutive bounded old roots and between the last one and \(0\), because \(Q(0)=1\).
+
+For nonintegral \(x\), both finite degrees are \(d_0\) eventually. These brackets give all roots of both rows and the required strict order. For integral \(x=d\ge2\), pass to a further subsequence lying entirely in one of the following three cases. Here \(d_0=d-1\).
+\begin{itemize}
+ \item If \(n\le dj-2\), both degrees are eventually \(d-1\), so the same brackets suffice.
+ \item If \(n=dj-1\), the new degree is \(d\). Its sign far to the left is \((-1)^d\), opposite to its sign \((-1)^{d-1}\) at the first bounded old root. Thus it has an extra root to the left.
+ \item If \(n\ge dj\), both degrees are eventually \(d\). Lemma~\ref{lem:escape} gives an additional old root to the left of all the bounded old roots, where the sign of the new row is \((-1)^d\). Its sign at the first bounded old root is \((-1)^{d-1}\). This gives the missing new root between the extra old root and the first bounded old root.
+\end{itemize}
+In each case the strict brackets give the full number of distinct roots in each row, proving simplicity. The affine map from \(y\) back to \(t\) is increasing. The original polynomials are positive for all \(t\ge0\), so the roots obtained in the original variable are negative. Each subsequence contradicts the counterexample hypothesis.
+
+\section{Formal verification}
+
+The Lean project represents the original ordered partitions as surjections onto a linearly ordered set of block positions. The theorem is \path{OrderedPartitions.original_interlacing_bounded_ratio} in \path{OrderedPartitions/HardRodBoundedRatio.lean}. Its conclusion is an ordered pair of complete real root arrays of the original rows, indexed by their exact degrees. The aligned shape and simplicity follow from the number of distinct ordered negative roots. The formal theorem permits any real \(C\), with the range vacuous or smaller outside the stated nontrivial regime.
+
+The formal estimates use normalized kernel coefficients and finite convolutions. The main proof interfaces are as follows.
+\begin{itemize}
+ \item \path{original_windowPoly} gives the exact affine bridge.
+ \item \path{window_coeff_limit} and \path{window_speed_limit} give the two limits.
+ \item \path{unit_interlacing} gives the length-one root theorem.
+ \item \path{windowPoly_integer_escape_at_cap} handles the integral boundary.
+ \item \path{finite_exceptional_rows} and \path{exceptional_ratio_tendsto} in
+   \path{HardRodExceptions.lean} verify Corollary~\ref{cor:exception}.
+\end{itemize}
+The top-level audit prints only \texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}.
+
+\paragraph{Code and data availability.}
+The formal development and reproducibility materials accompany the research dossier. They are intended for the \href{https://github.com/AlexZander-666/ordered-partition-large-blocks}{companion repository} upon public release.
+
+\paragraph{Disclosure.}
+ChatGPT assisted with the analytic derivations, implementation and replay of the formal proofs, and manuscript preparation.
+
+\begin{thebibliography}{9}
+\bibitem{alex}
+P.~Alexandersson, \emph{Real-rooted open problems}, ordered set partitions with large blocks.
+\href{https://www.symmetricfunctions.com/realRootedOpenProblems.htm\#set-partitions-and-trees}{SymCat}.
+
+\bibitem{lift}
+P.~Alexandersson, \emph{Big blocks in set partitions}, singleton-or-large restriction and ordered lift.
+\href{https://github.com/PerAlexandersson/RealRooted/blob/d34c13585e69912d443ecb973d9b78733dd9a052/RealRooted/CombinatorialExamples/BigBlockSingletons.lean}{Pinned RealRooted development}.
+
+\bibitem{aup}
+C.~Ahlbach, J.~Usatine, and N.~Pippenger, Barred preferential arrangements,
+\emph{Electron. J. Combin.} \textbf{20} (2013), no.~2, P55.
+\href{https://doi.org/10.37236/2482}{doi:10.37236/2482}.
+
+\bibitem{arovas}
+D.~P.~Arovas, \emph{Lecture Notes in Thermodynamics and Statistical Mechanics}, Section~6.3.2.
+\href{https://scalettar.physics.ucdavis.edu/p219a/ArovasStatMechnotes.pdf}{Lecture notes}.
+
+\bibitem{fang}
+C.~Fang, \emph{Eventual interlacing of large-block set-partition polynomials}, 2026.
+\href{https://hexagonmath.org/2611.01129v1}{hexagon:2611.01129v1}.
+
+\bibitem{initial}
+B.~Zuo, \emph{Large blocks in ordered set partitions}, version 1.0.0, 2026.
+\href{https://github.com/AlexZander-666/ordered-partition-large-blocks/releases/tag/v1.0.0}{Public research release}.
+
+\bibitem{penrose}
+O.~Penrose and J.~S.~N.~Elvey, The Yang--Lee distribution of zeros for a classical one-dimensional fluid,
+\emph{J. Phys. A} \textbf{1} (1968), 661--674.
+\href{https://doi.org/10.1088/0305-4470/1/6/305}{doi:10.1088/0305-4470/1/6/305}.
+
+\bibitem{renewal}
+J.~Ahlberg and P.~Alexandersson, \emph{Weighted renewal interlacing}, 2026.
+\href{https://www.symmetricfunctions.com/realRootedInterlacing.htm\#renewal-recurrences-with-a-real-rooted-seed}{SymCat}.
+
+\bibitem{rr}
+P.~Alexandersson, \emph{RealRooted}, issue~2590 and pull request~2665, 2026.
+\href{https://github.com/PerAlexandersson/RealRooted/issues/2590}{Issue~2590},
+\href{https://github.com/PerAlexandersson/RealRooted/pull/2665}{PR~2665}.
+\end{thebibliography}
+\end{document}

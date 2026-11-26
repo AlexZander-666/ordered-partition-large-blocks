@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "Please cite Bowen Zuo's paper when using this proof."
+title: "Bounded-ratio interlacing for ordered set partitions"
+type: software
+authors:
+  - family-names: Zuo
+    given-names: Bowen
+    affiliation: East China University of Science and Technology
+version: 1.0.0
+license: Apache-2.0
+repository-code: "https://github.com/AlexZander-666/ordered-partition-large-blocks"
