@@ -38,3 +38,5 @@ python3 verify.py /absolute/path/to/prepared/.lake/packages 2
 ```
 
 Bowen Zuo, East China University of Science and Technology. ChatGPT assisted in deriving and independently reviewing the arguments, implementing the checks and drafting the exposition. The author takes responsibility for the results.
+
+Version 1.0.0, 27 November 2026.

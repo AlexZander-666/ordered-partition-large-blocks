@@ -1,0 +1,82 @@
+name: Verify ordered-partition proofs
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: verify-ordered-partitions-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+
+      - name: Check the frozen source and reproduce the two certificates
+        run: |
+          receipts="$RUNNER_TEMP/ordered-partition-receipts"
+          mkdir -p "$receipts"
+          (cd formal && sha256sum --check SOURCE-SHA256SUMS) | tee "$receipts/source-hashes.log"
+          if [[ -f SHA256SUMS ]]; then
+            sha256sum --check SHA256SUMS | tee "$receipts/release-hashes.log"
+          fi
+          python3 -Bu scripts/check_first_jump.py | tee "$receipts/exact-counts.json"
+          cmp verification/exact-counts.json "$receipts/exact-counts.json"
+          python3 -Bu scripts/check_quadratic_chamber.py | tee "$receipts/quadratic-certificate.txt"
+          cmp verification/quadratic-certificate.txt "$receipts/quadratic-certificate.txt"
+
+      - name: Stage the pinned dependency workspace
+        run: |
+          dependencies="$(mktemp -d "$RUNNER_TEMP/ordered-partition-deps.XXXXXXXX")"
+          cp formal/{lean-toolchain,lakefile.toml,lake-manifest.json} "$dependencies/"
+          printf 'ORDERED_PARTITION_DEPS=%s\n' "$dependencies" >> "$GITHUB_ENV"
+
+      - name: Install the Lean toolchain
+        uses: leanprover/lean-action@fe408643ea7367d8c0404a8be3975bb145f5fb64
+        with:
+          lake-package-directory: ${{ env.ORDERED_PARTITION_DEPS }}
+          auto-config: 'false'
+          build: 'false'
+          test: 'false'
+          lint: 'false'
+          use-github-cache: 'false'
+          use-mathlib-cache: 'false'
+
+      - name: Prepare precisely the locked Mathlib dependencies
+        run: |
+          receipts="$RUNNER_TEMP/ordered-partition-receipts"
+          grep -rhE '^import Mathlib(\.[A-Za-z_][A-Za-z_0-9]*)*$' --include='*.lean' formal/OrderedPartitions |
+            cut -d' ' -f2 | sort -u > "$receipts/mathlib-cache-roots.txt"
+          mapfile -t imports < "$receipts/mathlib-cache-roots.txt"
+          test "${#imports[@]}" -gt 0
+          (
+            cd "$ORDERED_PARTITION_DEPS"
+            lake exe cache get "${imports[@]}"
+          ) 2>&1 | tee "$receipts/mathlib-cache.log"
+          cmp formal/lake-manifest.json "$ORDERED_PARTITION_DEPS/lake-manifest.json"
+
+      - name: Cold-build, audit axioms and replay all project modules
+        run: |
+          ulimit -Sn 65536
+          test ! -e formal/.lake
+          python3 -Bu formal/verify.py "$ORDERED_PARTITION_DEPS/.lake/packages" 1             2>&1 | tee "$RUNNER_TEMP/ordered-partition-receipts/lean-cold.log"
+
+      - name: Save verification receipts
+        if: ${{ always() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: ordered-partition-verification
+          path: ${{ runner.temp }}/ordered-partition-receipts/
+          if-no-files-found: warn
+          retention-days: 14
