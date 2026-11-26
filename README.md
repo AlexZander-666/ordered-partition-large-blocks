@@ -1,5 +1,7 @@
 # Large blocks in ordered set partitions
 
+The bounded-ratio theorem has its own paper and 76-module Lean proof. [Bounded-ratio release](https://github.com/AlexZander-666/ordered-partition-large-blocks/releases/tag/bounded-ratio-v1.0.0)
+
 For every block-size threshold $j\ge2$, successive counting polynomials strictly interlace from rank $j$ through the first cubic at rank $3j$. At every rank and for every positive order, the factorial moments of the number of large blocks increase strictly from their first possible occurrence onward.
 
 An ordered set partition of $[n]$ is a list of nonempty disjoint sets covering $[n]$. Let $K$ count the sets with at least $j$ labels, and let $O_{n,j}(t)=\sum_\pi t^{K(\pi)}$. The sum gives each ordered partition weight one. At $j=2$ the rows at ranks three and four are $6+7t$ and $24+45t+6t^2$. At the old zero $-6/7$, the new row equals $-498/49$. It is positive at zero and has positive leading coefficient, so its two roots strictly straddle the old one.

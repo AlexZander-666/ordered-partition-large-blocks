@@ -1,5 +1,7 @@
 # Bounded-ratio interlacing for ordered set partitions
 
+[Release `bounded-ratio-v1.0.0`](https://github.com/AlexZander-666/ordered-partition-large-blocks/releases/tag/bounded-ratio-v1.0.0) · [Publication notes and reproduction](PUBLICATION-NOTES.md)
+
 For every fixed real C>1, there exists a threshold K(C) such that all consecutive large-block polynomials at ranks n and n+1 have simple negative zeros in strict alternation whenever j≥K(C) and j≤n≤Cj. In particular, any infinite sequence of distinct counterexamples to the full conjecture must have n/j tending to infinity.
 
 An ordered partition is a list of nonempty disjoint blocks covering a labeled set. Each block of size at least j contributes one mark. When both rows have equal degree, each new root lies to the right of its old counterpart. At a degree increase the new roots bracket the old ones. The theorem gives an existence bound for K(C). [Alexandersson’s original problem](https://www.symmetricfunctions.com/realRootedOpenProblems.htm) · [Paper](paper/main.pdf)
