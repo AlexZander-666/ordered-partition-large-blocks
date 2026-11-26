@@ -1,0 +1,263 @@
+% This section follows the shared normalization in (6).
+\section{Consecutive cubic rows and the first quartic}
+\label{sec:cubic}
+
+Let \(n=3j+m\), where \(0\le m<j\). In the coordinate \(y=D(t-1)\) of
+Section~5, let \(P\) and \(Q\) denote the two rows divided by their own
+values at \(t=1\). Write
+\[
+ P=1+ay+by^2+cy^3,\qquad Q-P=y(d_0+e_0y+f_0y^2+zy^3).
+\]
+By (6), \(c>0\), with \(c=K_0^4/K_{3j}\) at \(m=0\).
+The coefficient \(z\) vanishes for \(m<j-1\); at \(m=j-1\),
+\(z=K_0^5/K_{4j}>0\). Put \(\kappa=z/c\) and
+\[
+ (d,e,f)=(d_0,e_0,f_0)-\kappa(1,a,b).
+\]
+Then \(Q=(1+\kappa y)P+yH\) with \(H=d+ey+fy^2\).
+
+\subsection{A sign criterion using the two separator roots}
+
+Suppose \(a,b,c,d,e,f>0\) and \(h=df/e^2\le4/25\).
+The number \(v=2/(1+\sqrt{1-4h})\) lies in \([1,5/4]\) and satisfies
+\(1/v=1-hv\). The two roots of \(H\) are \(-W,-w\), where
+\(w=dv/e\), \(W=e/(fv)\), and \(w/W=hv^2=v-1\le1/4\).
+For any upper bound \(V\ge v\) we claim that the tests
+\begin{equation}
+ ad>e,\qquad
+ (ad-e)e>Vd\max(0,bd-f),\qquad
+ V\frac{af}{be}+\frac{ce}{bf}<1
+ \tag{7}
+ \label{eq:cubic-tests}
+\end{equation}
+give \(P(-w)<0<P(-W)\). For the first sign, drop the negative cubic term
+and use \(1/v=1-hv\) to obtain
+\[
+ \frac{P(-w)}{v}\le 1-\frac{ad}{e}
+                   +\frac{dv(bd-f)}{e^2}<0.
+\]
+The far-point evaluation is
+\[
+ P(-W)=1+bW^2
+       \left(1-v\frac{af}{be}-\frac{1}{v}\frac{ce}{bf}\right)>0.
+\]
+Here \(v\ge1\) and \(v\le V\) allow the last comparison in
+\eqref{eq:cubic-tests}.
+
+Since \(c>0\) and \(P(0)=1\), the signs at \(-\infty,-W,-w,0\)
+give precisely three simple roots \(r_1<-W<r_2<-w<r_3<0\).
+At these roots the evaluations of \(Q=yH\) have signs \(-,+,-\),
+respectively. Together with \(Q(0)=1\), this isolates three new roots
+to the right of \(r_1\), one in each interval \((r_1,r_2)\),
+\((r_2,r_3)\), and \((r_3,0)\). When \(z>0\), the positive quartic
+leading term gives one more root to the left of \(r_1\).
+The degree exhausts the roots in both cases. This is the strict
+root transfer of Liu--Wang \cite[Theorem~2.1]{lw}, with separator \(H\)
+and multiplier \(y<0\) at the old roots. The increasing change back
+to \(t\) preserves order. The original coefficients are nonnegative,
+with positive constant, so every real root has \(t<0\).
+
+\subsection{Coefficient estimates}
+
+Keep \(K\) and \(B\) from Section~5. Write \(K_i=k_i=[x^i]K(x)\).
+The general formula (6) gives every \(y^h\) coefficient. Define
+\(g_i=[x^i]K^2\), \(w_i=[x^i]K^3\), \(v_i=[x^i]K^4\), with zero values
+at negative indices, and write \(\Delta g_i=g_{i+1}-g_i\) and likewise
+for the other kernels. We use the explicit expressions for \(g_i,w_i\)
+from Sections~2 and~5. In particular, at
+\(i\ge0\), \(\Delta w_i\) differs from \(i+2+3\rho/2\) by at most
+\(0.48\,2^{-i}\).
+
+Twice differentiating \(K'=K^2-\rho K\) yields
+\[
+ 6K^4=K'''+6\rho K''+11\rho^2K'+6\rho^3K .
+\]
+Consequently for \(i\ge0\),
+\[
+ v_i=\tfrac16(i+1)(i+2)(i+3)K_{i+3}
+      +\rho(i+1)(i+2)K_{i+2}
+      +\tfrac{11}{6}\rho^2(i+1)K_{i+1}+\rho^3K_i.
+\]
+By (1), replacing the four \(K\)'s by 1 costs at most
+\(1/1024+0.7/64+(11/6)(0.7)^2/16+0.7^3/2<0.24\).
+Here \((i+1)(i+2)(i+3)\le6\cdot8^i\),
+\((i+1)(i+2)\le2\cdot4^i\), and \(i+1\le2^i\).
+The forward difference of the polynomial part is
+\((i+2)(i+3)/2+2\rho(i+2)+11\rho^2/6\). Using \(0.69<\rho<0.70\)
+and a difference error at most \(0.48\), we obtain
+\begin{align*}
+ i^3/6 &\le v_i\le L_3(i):=i^3/6+1.70i^2+4.84i+3.89,\\
+ \ell_3(i):=i^2/2+3.87i+6 &\le \Delta v_i
+                         \le U_3(i):=i^2/2+3.90i+7.30 .
+\end{align*}
+The additional nonzero increments at index \(-1\) are \(K_0^2<2\),
+\(K_0^3<3\), and \(K_0^4<4\), respectively.
+
+For \(j\ge64\), let \(q=1/j\), \(s=j+m\), \(t_*=2j+m\), and set
+\[
+ M=(1-0.7q)^{-1},\qquad \eta=q/100,\qquad
+ \beta=0.69q/(1+q).
+\]
+The coefficients \(B_i\) are nonnegative, have sum at most \(M\), and
+satisfy \(B_0=1,\ B_1\ge\beta\), because \(B_i\le (0.7q)^i\).
+At rank \(N=n\) or \(n+1\), each numerator of order \(1,2,3\) in (6)
+is at most \(2(N+7)^3\) by the preceding estimates
+and \(M^3<2\). Dividing by \(K_N\) changes it by at most \(\eta\):
+\[
+ |K_N^{-1}-1|\le8^{-N},\qquad
+ 200N(N+7)^3\le8^N,\qquad \frac{1}{100N}\le\eta .
+\]
+The middle bound holds at \(N=100\), and the ratio of the polynomial
+expression from \(N\) to \(N+1\) is at most \((101/100)^4<8\)
+for all \(N\ge100\). An increment therefore changes by at most \(2\eta\).
+
+The resulting unscaled bounds are as follows:
+\begin{equation}
+\begin{aligned}
+ t_*+1.68+\beta t_*-\eta &\le a \le M(t_*+1.72)+\eta,\\
+ 1+\beta-3\eta &\le d_0\le1+2(M-1)-\beta+3\eta,\\
+ s^2/2+2.52s+2+\beta s^2-\eta &\le b
+                   \le M^2(s^2/2+2.55s+2.86)+\eta,\\
+ s+3+2\beta s-2\eta &\le e_0\le M^2(s+3.54)+2\eta,\\
+ m^3/6-\eta &\le c \le M^3 L_3(m)+\eta,\\
+ \ell_3(m)-2\eta &\le f_0\le M^3 U_3(m)+2\eta .
+\end{aligned}
+\tag{8}
+\label{eq:cubic-bounds}
+\end{equation}
+For \(a\), retain \(g_{t_*}+B_1g_{t_*-1}\), with \(g_{t_*}\ge t_*+1.68\)
+and \(g_{t_*-1}\ge t_*\). The unshifted term is at most \(t_*+1.72\)
+and every shifted term is also at most this bound. For \(d_0\), the
+unshifted and once-shifted increments differ from 1 by at most
+\(0.525/4^{j-1}\le\eta/2\). Their sum, with weights \(1,B_1\), differs
+from \(1+B_1\) by at most \(\eta\). The remaining mass is at most
+\(M-1-B_1\), and the increments are nonnegative and at most 2.
+For the lower bound on \(b\), retain \(w_s+2B_1w_{s-1}\), using
+\(w_s\ge s^2/2+2.52s+2\) and \(w_{s-1}\ge s^2/2\).
+For \(e_0\), the corresponding increments are bounded below by
+\(\Delta w_s\ge s+3\) and \(\Delta w_{s-1}\ge s\), since \(s\ge64\).
+The upper bounds use the polynomial or increment upper bound at \(s\),
+which also bounds all shifted values, and the total mass \(M^2\).
+The last two lines follow from the bounds for \(v_i,\Delta v_i\),
+retaining the unshifted term for the lower bounds and using \(M^3\)
+for the upper bounds. The extra increments at index \(-1\) respect
+the same upper bounds.
+
+In an ordinary pair, \(\kappa=0\) and \(f=f_0\ge\ell_3(m)-2\eta>0\).
+To bound the actual ratio \(c/f_0\) using the common \(m\), use
+\begin{equation}
+ M^3L_3(m)+\eta
+ \le \tfrac13 M^3(m+3)\bigl(\ell_3(m)-2\eta\bigr).
+ \tag{9}
+ \label{eq:cubic-ratio}
+\end{equation}
+Indeed \(\eta\le1/6400\) and \(M^3\ge1\).
+After these substitutions, the difference between the right-hand and
+left-hand sides of \eqref{eq:cubic-ratio}, multiplied by \(3/M^3\),
+is bounded below by
+\[
+ \frac{40503}{6400}+\frac{9887}{3200}m+\frac{27}{100}m^2>0.
+\]
+Hence \(c/f_0\le M^3(m+3)/3\).
+At the degree increase \(m=j-1\), we have \(0<z<6\).
+The bound \(c\ge(j-1)^3/6-\eta>6j^3/50\) follows
+already at \(j=64\) after division by \(j^3\), with the lower bound
+increasing in \(j\). Thus \(0<\kappa<50/j^3\).
+
+\subsection{The rational boxes}
+
+Use the units
+\[
+ \alpha=a/j,\quad \beta_2=b/j^2,\quad \gamma=c/j^3,\quad
+ d,\quad E=e/j,\quad F=f/j^2 .
+\]
+The comparisons in \eqref{eq:cubic-tests} and \(h=dF/E^2\) are invariant
+under this change. Partition the rectangle
+\((q,m/j)\in[0,1/64]\times[0,1]\) into \(6\cdot128\) closed cells, with
+intervals \([q_0,q_1]\) and \([u_0,u_1]\).
+Evaluate \eqref{eq:cubic-bounds} after substituting \(q=1/j\) and
+\(u=m/j\) and passing to these units. Each positive monomial takes its
+lower or upper endpoint as appropriate, and each subtracted quantity
+takes the opposite endpoint. The functions \(M\), \(\eta\), and
+\(\beta=0.69q/(1+q)\) are increasing in \(q\).
+For example, with \(M_1=M(q_1)\) and \(\eta_1=\eta(q_1)\), the bounds
+on \(\beta_2\) are
+\[
+\begin{aligned}
+\underline{\beta_2}
+ &= (1+u_0)^2/2+2.52(1+u_0)q_0+2q_0^2
+           +\beta(q_0)(1+u_0)^2-\eta_1q_1^2,\\
+\overline{\beta_2}
+ &= M_1^2\bigl((1+u_1)^2/2+2.55(1+u_1)q_1+2.86q_1^2\bigr)
+           +\eta_1q_1^2 .
+\end{aligned}
+\]
+A cell can contain the quartic entry exactly when
+\(q_0+u_0\le1\le q_1+u_1\). The program checks that case in every such
+cell, reducing the lower bounds of \(d,E,F\) by
+\(50q_1^3(1,\overline{\alpha},\overline{\beta_2})\), respectively.
+The upper bounds are unchanged. For an ordinary cell take
+\(G=M_1^3(u_1+3q_1)/3\) as an upper bound on \(\gamma/F\) by
+\eqref{eq:cubic-ratio}. At a possible quartic entry, the corrected lower
+bound \(\underline F\) is positive and we take \(G=\overline\gamma/\underline F\).
+The actual ordinary \(F\) is positive even in a cell with nonpositive
+\(\underline F\). The ratio estimate avoids dividing by this lower
+bound and covers \(m=0\). The edge \(q=0\) only closes the grid, since
+all finite cutoffs have \(q>0\).
+
+For a fixed cell let \(h_*=\overline d\,\overline F/\underline E^2\).
+Starting at \(V=5/4\), update \(V\gets(1-h_*V)^{-1}\) five times.
+If \(v\le V\) and \(h\le h_*\), then \(0<1-h_*V\le1-hv\), so the
+new \(V\) remains an upper bound for \(v\). When \(h_*<4/25\),
+all iterates are in \([1,5/4]\) and the denominators are positive.
+With \(A_*=\underline\alpha\,\underline d-\overline E\), the three
+box margins for \eqref{eq:cubic-tests} are
+\[
+ A_*,\quad
+ A_*\underline E-
+ V\overline d\,\max(0,\overline{\beta_2}\,\overline d-\underline F),
+ \quad
+ 1-\frac{V\overline\alpha\,\overline F}{\underline{\beta_2}\,\underline E}
+   -\frac{G\overline E}{\underline{\beta_2}}.
+\]
+The first margin is positive before the product by \(\underline E\)
+is used. The exact computation checks these margins, the required
+positive lower bounds, and \(h_*<4/25\). The 768 ordinary checks and
+nine possible quartic checks have the following lower bounds on
+their minima, rounded down:
+\begin{center}
+\begin{tabular}{c|rrrr}
+ & \(4/25-h_*\) & \(A_*\) & Near margin & Far margin\\
+\hline
+777 checks & \(0.021951\) & \(0.964572\) & \(0.035763\) & \(0.136898\)
+\end{tabular}
+\end{center}
+The attached checker uses rational arithmetic for every comparison.
+Each actual point in the stated range belongs to a closed cell with
+the required flag. This proves the sign tests for every \(j\ge64\).
+
+\subsection{Finite complement}
+
+For \(2\le j\le63\), use the exact last-block recurrence of Section~4,
+and compare binomial moments with the independent coefficient
+extraction of Section~3. In the original variable, let \(R\) be a positive
+multiple of the negative remainder of \(Q\) on division by \(P\),
+then similarly \(S=-\operatorname{rem}(P,R)\) and
+\(T=-\operatorname{rem}(R,S)\) up to positive factors.
+Integer pseudo-division uses positive leading coefficients, so the
+scale factors preserve signs. The attached finite checker gives
+degrees \(2,1,0\) and positive leading coefficients for \(R,S,T\)
+on every one of the \(2015=\sum_{j=2}^{63}j\) pairs, including
+all 62 quartic entries.
+
+At the root of \(S\), \(R\) is negative because \(T\) is positive.
+Thus the quadratic \(R\) has two distinct real roots straddling that
+point. At its roots \(P\) has signs \(+,-\), since there \(P\) has the
+opposite sign of \(S\). The positive leading coefficient of the old
+cubic gives one old root in each interval split by the two roots of
+\(R\). At the three old roots, \(Q\) has signs \(-,+,-\).
+All original coefficients are nonnegative and the constant is positive,
+so all old roots are negative and the upper constant gives the
+rightmost new root before zero. The quartic leading term gives
+the additional leftmost root when present. The degree count again
+proves simplicity and completeness. This completes Theorem~2.

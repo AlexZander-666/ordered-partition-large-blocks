@@ -1,8 +1,10 @@
 # Large blocks in ordered set partitions
 
+Version 1.1.0 extends the adjacent interlacing theorem through the first quartic. [Nine-page paper and reproduction guide](quartic-chamber/README.md) · [GitHub v1.1.0](https://github.com/AlexZander-666/ordered-partition-large-blocks/releases/tag/v1.1.0)
+
 The bounded-ratio theorem has its own paper and 76-module Lean proof. [Bounded-ratio release](https://github.com/AlexZander-666/ordered-partition-large-blocks/releases/tag/bounded-ratio-v1.0.0)
 
-For every block-size threshold $j\ge2$, successive counting polynomials strictly interlace from rank $j$ through the first cubic at rank $3j$. At every rank and for every positive order, the factorial moments of the number of large blocks increase strictly from their first possible occurrence onward.
+For every block-size threshold $j\ge2$, successive counting polynomials strictly interlace from rank $j$ through the first quartic at rank $4j$. At every rank and for every positive order, the factorial moments of the number of large blocks increase strictly from their first possible occurrence onward.
 
 An ordered set partition of $[n]$ is a list of nonempty disjoint sets covering $[n]$. Let $K$ count the sets with at least $j$ labels, and let $O_{n,j}(t)=\sum_\pi t^{K(\pi)}$. The sum gives each ordered partition weight one. At $j=2$ the rows at ranks three and four are $6+7t$ and $24+45t+6t^2$. At the old zero $-6/7$, the new row equals $-498/49$. It is positive at zero and has positive leading coefficient, so its two roots strictly straddle the old one.
 
@@ -16,12 +18,16 @@ All roots below are simple and negative. Read the letters from the most negative
 | $n+1=2j$ | B A B |
 | $2j\le n$ and $n+1<3j$ | A B A B |
 | $n+1=3j$ | B A B A B |
+| $3j\le n$ and $n+1<4j$ | A B A B A B |
+| $n+1=4j$ | B A B A B A B |
 
-Under the uniform measure on ordered partitions, $\mathbb E\binom{K}{h}$ vanishes for $n<hj$ and increases strictly from $n$ to $n+1$ whenever $h\ge1$ and $n+1\ge hj$. In particular, the transition from zero to the first positive term is included. Alexandersson's question about interlacing continues beyond the first cubic. [Original statement and generating function](https://github.com/PerAlexandersson/symmetricfunctions.com/commit/265ee865f973c086bd144e53b5bf24d3cc2503f1)
+Under the uniform measure on ordered partitions, $\mathbb E\binom{K}{h}$ vanishes for $n<hj$ and increases strictly from $n$ to $n+1$ whenever $h\ge1$ and $n+1\ge hj$. In particular, the transition from zero to the first positive term is included. Alexandersson's question covers all ranks. [Original statement and generating function](https://github.com/PerAlexandersson/symmetricfunctions.com/commit/265ee865f973c086bd144e53b5bf24d3cc2503f1)
 
-[Read the paper](paper/main.pdf) or [download its LaTeX source](paper/main.tex).
+[Read the revised paper](quartic-chamber/paper/main.pdf) or [download its LaTeX source](quartic-chamber/paper/arxiv-source.zip). The [five-page v1.0.0 edition](paper/main.pdf) covers the first cubic.
 
 ## Verification
+
+The 81-module extension and its four arithmetic checks have a [dedicated reproduction guide](quartic-chamber/README.md) and [theorem map](quartic-chamber/verification/STATEMENT-MAP.md).
 
 [Source-cold verification and theorem mapping](verification/verification.md)
 
@@ -43,4 +49,4 @@ python3 verify.py /absolute/path/to/prepared/.lake/packages 2
 
 Bowen Zuo, East China University of Science and Technology. ChatGPT assisted in deriving and independently reviewing the arguments, implementing the checks and drafting the exposition. The author takes responsibility for the results.
 
-Version 1.0.0, 27 November 2026.
+Version 1.1.0, 27 November 2026.

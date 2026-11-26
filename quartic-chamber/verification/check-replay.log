@@ -1,0 +1,98 @@
+PASS 1224 original adjacent pairs including 48 quadratic-to-cubic jumps
+Two independent counts: last-block recurrence; marked ordered subsequence EGF.
+SHA256 of deterministically ordered integer witnesses e78822d97e70337c84e238bc87a48548d0c1e61a52c52bf60d92098628d4f7bc
+checker verify-quadratic exit 0
+{
+  "J": 64,
+  "u_cells": 128,
+  "q_cells": 6,
+  "ordinary": 768,
+  "possible_quartic": 9,
+  "total": 777,
+  "lower_bounds": [
+    "0.021951",
+    "0.964572",
+    "0.035763",
+    "0.136898"
+  ],
+  "certificate_sha256": "33342d7e2ba180176d680eba83f64ca7d7649fcfd157890e3c58567635ba7a0a"
+}
+checker cubic-boxes exit 0
+{
+  "first": 2,
+  "last": 63,
+  "pairs": 2015,
+  "quartic_jumps": 62,
+  "sha256": "947d619f29cc3a74d73cd7599950df7746d34a05e9bfe7d98eba2bd9b36f2113"
+}
+checker cubic-finite exit 0
+{
+  "constants": {
+    "k4_error_upper": "91991/384000",
+    "c_over_f_polynomial": [
+      "40503/6400",
+      "9887/3200",
+      "27/100"
+    ]
+  },
+  "boxes": {
+    "total": 777,
+    "ordinary": 768,
+    "quartic": 9,
+    "lower_bounds": [
+      "0.021951",
+      "0.964572",
+      "0.035763",
+      "0.136898"
+    ],
+    "quartic_cells": [
+      [
+        0,
+        127
+      ],
+      [
+        1,
+        127
+      ],
+      [
+        2,
+        126
+      ],
+      [
+        2,
+        127
+      ],
+      [
+        3,
+        126
+      ],
+      [
+        3,
+        127
+      ],
+      [
+        4,
+        126
+      ],
+      [
+        5,
+        125
+      ],
+      [
+        5,
+        126
+      ]
+    ]
+  },
+  "finite": {
+    "cutoffs": [
+      2,
+      63
+    ],
+    "pairs": 2015,
+    "quartic_entries": 62,
+    "literal_max_n": 8,
+    "rows_and_bezout_pivots_sha256": "1c285149c26792340b82dda73a1e59b9a144502e8d07499ac3096bdbfd2ec213"
+  }
+}
+checker cubic-independent exit 0

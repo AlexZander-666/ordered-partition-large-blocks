@@ -1,7 +1,8 @@
 cff-version: 1.2.0
 message: "Please cite this work when using the formal proofs or the verification scripts."
 type: software
-title: "Large blocks in ordered set partitions: Factorial moments and initial interlacing"
+title: "Large blocks in ordered set partitions: Factorial moments and interlacing through the first quartic"
+version: "1.1.0"
 authors:
   - family-names: Zuo
     given-names: Bowen

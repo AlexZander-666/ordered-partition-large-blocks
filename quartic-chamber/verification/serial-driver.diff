@@ -1,0 +1,16 @@
+--- submitted/verify.py
++++ audit/audit_verify_serial.py
+@@ -61,8 +61,11 @@
+ print(version, flush=True)
+ print("Initial project objects: 0", flush=True)
+ build_env = dict(os.environ, LEAN_NUM_THREADS=str(min(jobs, 4)))
+-subprocess.run(["lake", "--no-ansi", "--wfail", "build", "+" + mods[-1]],
+-               check=True, env=build_env)
++for build_module in mods:
++    print("serial_build_target=" + build_module, flush=True)
++    subprocess.run(["lake", "--no-ansi", "--quiet", "--wfail", "build", "+" + build_module],
++                   check=True, env=build_env)
++    print("serial_build_exit=0 " + build_module, flush=True)
+ print("strict_build_exit=0", flush=True)
+ 
+ allowed = {"propext", "Classical.choice", "Quot.sound"}

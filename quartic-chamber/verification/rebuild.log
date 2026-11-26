@@ -1,0 +1,13 @@
+loose source pass 1: exit 0
+loose source pass 2: exit 0
+source ZIP pass 1: exit 0
+source ZIP pass 2: exit 0
+Both clean builds produced the same PDF bytes. ZIP contents and CRCs checked.
+03a791c0520b55851424550345895d0a793cef0498ad63ff42d873f81c403c7b  main.pdf
+f981b17dee584694976b6c7a6772b0f662189a169823637485b4498612d4e0a2  arxiv-source.zip
+f0cc88de82a710b6f9022cbfcdb7b8238762a2b9b7ffa3f19508fa030c6658e3  main.tex
+adbdf3716cce9d89d7f8bcba617c6bbd2f7ce5e53dc384f25384ce09ea90e615  cubic.tex
+2b49293c7ac8e07ba8cb16479f7dc4c65d980246fbec3e885d23b48376d819c5  anc/verify-quadratic.py
+482d771e0248c663ae85f8afbd67384c5a2e9def89da5a88f8c08eff0f1c069d  anc/cubic-boxes.py
+0f29ab1de1907ef2ea19efbf11a7919ca38638a80df32f605a78278e5d50f2da  anc/cubic-finite.py
+66ced4368d3cf5fb18c546b2cddd20c6deeedc836631c59a7a389623a5b894cb  anc/cubic-independent.py
