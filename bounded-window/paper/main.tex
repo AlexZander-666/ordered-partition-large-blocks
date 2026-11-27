@@ -1,0 +1,104 @@
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,microtype}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks,pdfauthor={Bowen Zuo},pdftitle={Full interlacing windows for ordered set partitions at bounded ratio}]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\title{Full interlacing windows for ordered set partitions at bounded ratio}
+\author{Bowen Zuo\\[2pt]\small East China University of Science and Technology}
+\date{27 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Mark each block of size at least $j$ in an ordered partition of an $n$-element labelled set. For each fixed real $C\ge1$, we prove that the entire root arrays of the resulting polynomials at $n$ and $n+h$ strictly interlace for all $1\le h\le j$, whenever $j$ is sufficiently large and $j\le n\le Cj$. All roots are simple and negative. The published adjacent-row theorem gives monotonicity of each root counted from the right. Comparing across a full period requires a separate leading-coefficient bound when the two extreme roots diverge at an integral ratio. We obtain this bound from the marked-block coefficient formula. The complete window theorem is formalized in Lean.
+\end{abstract}
+
+\section{Statement and reduction to a full period}
+An ordered set partition of $[n]$ is a list of nonempty disjoint blocks with union $[n]$, with the empty list for $n=0$. Let $O_{n,j}(t)$ sum $t^{\#\{B:|B|\ge j\}}$ over these partitions. For $j\ge2$ this polynomial has degree $\lfloor n/j\rfloor$ and positive coefficients in all degrees up to its degree: prescribed large blocks can have size $j$ and the remaining labels can form singleton blocks. The question of real-rootedness and interlacing of consecutive ordered rows appears in Alexandersson's problem list \cite{alex}. The adjacent-row theorem below a fixed ratio was proved in \cite{adjacent}. We extend that theorem uniformly to every shift in a full period.
+
+\begin{theorem}\label{thm:window}
+For each fixed real $C\ge1$ there is an integer $J(C)\ge2$ such that for integers $j\ge J(C)$ and $j\le n\le Cj$, and every integer $1\le h\le j$, both $O_{n,j}$ and $O_{n+h,j}$ have only simple negative roots. In increasing real order, with $d=\lfloor n/j\rfloor$, $e=\lfloor(n+h)/j\rfloor$, and old and new roots $r_1,\ldots,r_d$ and $s_1,\ldots,s_e$, their order is
+\[
+\begin{array}{ll}
+r_1<s_1<r_2<s_2<\cdots<r_d<s_d<0, & e=d,\\[2pt]
+s_1<r_1<s_2<r_2<\cdots<s_d<r_d<s_{d+1}<0, & e=d+1.
+\end{array}
+\]
+\end{theorem}
+
+Use the adjacent theorem of \cite[Theorem~1]{adjacent} with cap $C+1$, so that it applies throughout the window from $n$ through $n+j$, for $j$ beyond a threshold depending only on $C$. Let $R_i(N)$ be the $i$th root from the right of $O_{N,j}$. The adjacent ordering gives $R_i(N+1)>R_i(N)$ whenever the older index $i$ exists. Degrees are nondecreasing, so this monotonicity persists along the entire window. Since $\lfloor(n+j)/j\rfloor=d+1$, it suffices to prove
+\begin{equation}\label{eq:fullperiod}
+ R_{i+1}(n+j)<R_i(n)\qquad(1\le i\le d).
+\end{equation}
+Indeed, $R_i(n+h)>R_i(n)$ for $1\le i\le d$, and when $i+1$ exists at $n+h$, monotonicity gives $R_{i+1}(n+h)\le R_{i+1}(n+j)<R_i(n)$. This yields the two orders in Theorem~\ref{thm:window}.
+
+\section{Normalized rows and a uniform coefficient bound}
+Use the definitions of \cite[Section~2]{adjacent}:
+\[
+\begin{gathered}
+\rho=\log 2,\qquad A=(2\rho)^{-1},\qquad q_r=\frac{\rho^r}{r!},\\
+K(z)=\frac{1}{A(2-e^{\rho z})},\qquad k_s=[z^s]K(z),\qquad
+B_j(z)=\sum_{v\ge0}\frac{q_{j+v}}{q_j}z^v .
+\end{gathered}
+\]
+For fixed $j$ the change $y=Ajq_j(t-1)$ is increasing and applies to every rank. Write
+\[
+ P_{n,j}(y)=\frac{O_{n,j}(1+y/(Ajq_j))}{O_{n,j}(1)},\qquad a_i(n,j)=[y^i]P_{n,j}(y).
+\]
+An ordered selection of $i$ marked blocks leaves $i+1$ unrestricted lists between and around them. Their generating function gives
+\begin{equation}\label{eq:actual}
+ a_i(n,j)=\frac{[z^{n-ij}]B_j(z)^iK(z)^{i+1}}{j^i k_n},
+\end{equation}
+where a negative coefficient index gives zero and $a_0(n,j)=1$. The uniform renewal estimate $1/2\le k_s\le3/2$ for every $s\ge0$ is from \cite[Section~4]{adjacent}.
+
+\begin{lemma}\label{lem:lead}
+For $j\ge50$ and integers $D,m\ge0$, put $n=Dj+m$. Then
+\[
+ j\,a_{D+1}(n+j,j)\le18(m+1)a_D(n,j).
+\]
+\end{lemma}
+\begin{proof}
+All the series used below have nonnegative coefficients. If $W$ has nonnegative coefficients and $0\le s\le m$, the first $s+1$ terms of the coefficient formula for $WK$ give
+\[
+ [z^s]WK=\sum_{i=0}^{s}([z^i]W) k_{s-i}
+ \le3\sum_{i=0}^{s}([z^i]W) k_{m-i}\le3[z^m]WK.
+\]
+Also $[z^v]B_j\le(\rho/(j+1))^v$ and $\rho<1$. Thus for every $a\ge0$, when $j\ge50$,
+\[
+ [z^a]B_jK\le\frac{3}{2}\sum_{v=0}^a \left(\frac{\rho}{j+1}\right)^v<2.
+\]
+It follows that $[z^m]WK(B_jK)\le6(m+1)[z^m]WK$. Take $W=B_j^D K^D$ and apply \eqref{eq:actual}. The ratio of the remaining normalization factors is $k_n/k_{n+j}\le3$; this gives the claimed bound.
+\end{proof}
+
+\section{The full-period comparison}
+Fix $C$. If \eqref{eq:fullperiod} were to fail at arbitrarily large thresholds, choose a sequence of such pairs with $j\to\infty$. After taking a subsequence, the lower degree is a fixed integer $D\ge1$ and $n/j\to x\in[D,D+1]$. The new degree is $D+1$. The hard-rod volume polynomials are
+\[
+ \Phi_x(y)=1+\sum_{r\ge1}\frac{(x-r)_+^r}{r!}y^r,\qquad u_+=\max(u,0).
+\]
+For $x>1$, the coefficient limit of \cite[Lemma~3]{adjacent} gives $P_{n,j}\to\Phi_x$, and $P_{n+j,j}\to\Phi_{x+1}$. The unit-delay root theorem there gives simple negative roots in strict alternation, with the larger polynomial occupying both ends \cite[Lemma~5]{adjacent}.
+
+If $D<x\le D+1$, the two limits have degrees $D$ and $D+1$. This includes an integer approached in the lower chamber. Choose disjoint closed intervals about all limiting roots of both polynomials. Each polynomial and its derivative converge uniformly on these fixed intervals, so endpoint signs and nonzero derivative signs give a unique simple root in each interval. The intervals give the prescribed combined order. Their root counts already exhaust the finite degrees, so \eqref{eq:fullperiod} holds eventually.
+
+Consider instead $x=D$ with $n=Dj+m$, where $0\le m=o(j)$. The limits now have degrees $D-1$ and $D$. When $D=1$, the lower limit $P_{n,j}\to\Phi_1=1$ follows directly from \eqref{eq:actual}: for $j\ge50$, $[z^m]B_jK^2\le3(m+1)$ by the bounds on $B_jK$ and $K$, and $k_n\ge1/2$. The upper limit is $\Phi_2=1+y$. In general the two bounded arrays are obtained from simple roots in disjoint intervals as above. Denote the extra roots in the two finite rows by $E$ and $E'$, in the common $y$ coordinate. Each exists since the adjacent theorem gives complete real splitting. Apart from these two roots, the two arrays stay bounded.
+
+The two leading coefficients $A_D=a_D(n,j)$ and $A'_{D+1}=a_{D+1}(n+j,j)$ are strictly positive and tend to zero by the indicated limits. The coefficients immediately below them have positive limits $1/(D-1)!$ and $1/D!$, respectively. Vieta's sum-of-roots formula, with the bounded roots contributing $O(1)$, gives
+\[
+ -E=\frac{a_{D-1}(n,j)}{A_D}+O(1),\qquad
+ -E'=\frac{a_D(n+j,j)}{A'_{D+1}}+O(1).
+\]
+Thus both escape to the left. By Lemma~\ref{lem:lead}, $A'_{D+1}/A_D\le18(m+1)/j\to0$. It follows that $|E'|/|E|\to\infty$, hence $E'<E$ eventually. Inserting these two roots to the left of the interlaced bounded arrays gives the complete full-period strict order. For $D=1$ this puts the two extra roots to the left of the one bounded upper root, in the same order. The increasing affine change transfers the comparisons to the original marker, where all roots are negative. This contradicts the failing sequence and proves \eqref{eq:fullperiod}. The reduction then proves Theorem~\ref{thm:window}.
+
+\section{Formal verification}
+The original ordered labelled partitions are represented by surjections onto a linearly ordered set of block positions. The formal entry is \path{OrderedPartitions.HardRodWindowVerified}. In the \texttt{OrderedPartitions} namespace, \path{original_full_period_bounded_ratio} and \path{original_full_window_bounded_ratio} give the exact original-row comparisons, with complete degree-indexed root arrays. The leading-coefficient inequality is \path{Kernel.full_period_leading_bound} in that namespace. The source uses stable-degree and integral loss-of-degree branches, with the escape comparison in \path{HardRodFullPeriodVieta.lean}. The induction on rightward root motion is in \path{HardRodPeriodOrder.lean}.
+
+The locked Lean 4.33.1 project was compiled from a fresh source extraction and replayed one local module per Lean process. It includes 82 local modules, 212 source axiom reports and eight targeted reports, with axioms among \texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}. The machine results and reproduction commands are supplied with that project.
+
+\paragraph{Disclosure.}
+ChatGPT assisted with the proof development, formal implementation and verification, and preparation of the manuscript.
+
+\begin{thebibliography}{2}
+\bibitem{alex} P.~Alexandersson, \emph{Real-rooted open problems}, ordered set partitions with large blocks, \href{https://www.symmetricfunctions.com/realRootedOpenProblems.htm\#set-partitions-and-trees}{SymCat}.
+\bibitem{adjacent} B.~Zuo, \emph{Bounded-ratio interlacing for ordered set partitions}, version 1.0.0, 2026, \href{https://doi.org/10.5281/zenodo.24570914}{doi:10.5281/zenodo.24570914}.
+\end{thebibliography}
+\end{document}

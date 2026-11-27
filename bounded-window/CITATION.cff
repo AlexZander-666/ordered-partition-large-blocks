@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "Please cite this work when using its formal proof or verification scripts."
+type: software
+version: 1.0.0
+title: "Full interlacing windows for ordered set partitions at bounded ratio"
+authors:
+  - family-names: Zuo
+    given-names: Bowen
+    affiliation: East China University of Science and Technology
+repository-code: "https://github.com/AlexZander-666/ordered-partition-large-blocks/tree/bounded-window-v1.0.0/bounded-window"
+license: Apache-2.0
+keywords:
+  - ordered set partitions
+  - polynomial interlacing
+  - hard rods
+  - Lean 4
